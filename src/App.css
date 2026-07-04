@@ -148,7 +148,7 @@
 .app-map {
   flex: 1;
   position: relative;
-  background: var(--navy);
+  background: var(--paper);
 }
 
 .app-side {
@@ -421,7 +421,14 @@
   box-shadow: 0 0 0 3px rgba(201, 151, 43, 0.35);
 }
 
-/* ---- map marker icons ---- */
-.plm-marker-icon {
-  filter: drop-shadow(0 0 2px rgba(2, 11, 24, 0.8));
+/* ---- globe marker icons ---- */
+/* Positioning (incl. centering) is applied inline by three's CSS2DRenderer. */
+.globe-marker {
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px rgba(2, 11, 24, 0.55));
+}
+
+.globe-cluster {
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(2, 11, 24, 0.35);
 }

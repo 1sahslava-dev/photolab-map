@@ -5,6 +5,7 @@ import Timeline from "./components/Timeline";
 import FiltersPanel from "./components/FiltersPanel";
 import NodeCard from "./components/NodeCard";
 import UnlocatedList from "./components/UnlocatedList";
+import ClusterList from "./components/ClusterList";
 import "./App.css";
 
 const DEFAULT_FILTERS = {
@@ -31,6 +32,7 @@ function applyFilters(nodes, filters) {
 export default function App() {
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [selectedNodeId, setSelectedNodeId] = useState(null);
+  const [activeCluster, setActiveCluster] = useState(null);
 
   const filteredNodes = useMemo(() => applyFilters(data.nodes, filters), [filters]);
   const nodesById = useMemo(() => new Map(data.nodes.map((n) => [n.id, n])), []);
@@ -39,7 +41,15 @@ export default function App() {
   const located = useMemo(() => filteredNodes.filter((n) => n.coordinates), [filteredNodes]);
   const unlocated = useMemo(() => filteredNodes.filter((n) => !n.coordinates), [filteredNodes]);
 
-  const handleSelectNode = useCallback((id) => setSelectedNodeId(id), []);
+  const handleSelectNode = useCallback((id) => {
+    setSelectedNodeId(id);
+    setActiveCluster(null);
+  }, []);
+
+  const handleSelectCluster = useCallback((cluster) => {
+    setSelectedNodeId(null);
+    setActiveCluster(cluster);
+  }, []);
 
   return (
     <div className="app-shell">
@@ -66,11 +76,20 @@ export default function App() {
           <MapView
             nodes={located}
             onSelectNode={handleSelectNode}
+            onSelectCluster={handleSelectCluster}
             selectedNodeId={selectedNodeId}
           />
         </section>
         <aside className="app-side">
-          <NodeCard node={selectedNode} onClose={() => setSelectedNodeId(null)} />
+          {activeCluster ? (
+            <ClusterList
+              cluster={activeCluster}
+              onSelectNode={handleSelectNode}
+              onClose={() => setActiveCluster(null)}
+            />
+          ) : (
+            <NodeCard node={selectedNode} onClose={() => setSelectedNodeId(null)} />
+          )}
           <UnlocatedList
             nodes={unlocated}
             onSelectNode={handleSelectNode}
