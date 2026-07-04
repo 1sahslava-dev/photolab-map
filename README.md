@@ -1,16 +1,64 @@
-# React + Vite
+# PHOTO LAB by VF — историческая карта фотографии
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Интерактивная карта мира + временная шкала развития фотографии, построенные на
+исследовательской базе PHOTO LAB by VF (`01_Master_Facts` и другие листы
+мастер-xlsx). См. полное ТЗ: `PHOTO_LAB_Map_TZ_for_Claude_Code.md`.
 
-Currently, two official plugins are available:
+## Как обновить данные (рабочий процесс на годы вперёд)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Единственный источник правды — xlsx-мастер-файл. Код сайта данные не хранит.
 
-## React Compiler
+1. Положите новую версию мастер-файла в `data/master.xlsx` (заменив старый).
+2. Запустите конвертер:
+   ```
+   python3 scripts/convert.py
+   ```
+   Он читает `data/master.xlsx` и перезаписывает `src/data/data.json`.
+3. Проверьте вывод в терминале — конвертер печатает количество узлов и список
+   узлов без координат. Если появится предупреждение о ветке без назначенного
+   цвета — см. раздел «Цвета веток» ниже.
+4. Перезапустите дев-сервер (`npm run dev`) или пересоберите сайт (`npm run build`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Конвертер **не придумывает** данные: пустые координаты, пустые источники и
+т.п. остаются пустыми в JSON и обрабатываются интерфейсом как отдельное
+состояние (например блок «Глобальные процессы без точки на карте»), а не как
+ошибка для исправления кодом.
 
-## Expanding the Oxlint configuration
+### Требования к xlsx
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Нужны листы `01_Master_Facts` (26 колонок, см. схему в ТЗ), `02_Branches`,
+`03_Lessons_Map`, `04_Sources`. Названия колонок должны совпадать с текущими —
+если автор переименует колонку в xlsx, конвертер упадёт с понятной ошибкой
+(`ValueError` от `list.index`), а не тихо потеряет данные.
+
+### Цвета веток
+
+`02_Branches` описывает цвет веток словами («синий», «золотой» и т.п.), а не
+hex-кодами. Соответствие названий веток конкретным hex-значениям зафиксировано
+в `scripts/convert.py` (`BRANCH_COLORS`) — цвета подобраны и провалидированы по
+чек-листу CVD-доступности (13 категориальных цветов, проверены на дельту под
+протанопией/дейтанопией/тританопией и на контраст к тёмному/светлому фону).
+Если в новой версии xlsx появится 14-я ветка, конвертер выведет предупреждение
+в stderr и не станет придумывать цвет сам — нужно вручную добавить строку в
+`BRANCH_COLORS` и по возможности перепроверить палитру валидатором.
+
+## Разработка
+
+```
+npm install
+npm run dev
+```
+
+Стек: React + Vite, карта — Leaflet + leaflet.markercluster (кластеризация на
+сильном зуме), временная шкала — свой компонент на absolute-позиционировании.
+Конвертер — Python (openpyxl), запускается вручную, не на каждой сборке.
+
+## Правила фильтрации (из ТЗ, соблюдены буквально)
+
+- Фильтр «по уроку» использует только колонку `Привязка к уроку` из
+  `01_Master_Facts`. Диапазоны в `03_Lessons_Map` — нарративные и не
+  используются как множество для фильтрации.
+- Цвет маркера = ветка развития (13 цветов), форма маркера = тип узла (11
+  типов) — независимые кодировки.
+- Узлы без координат не пропускаются и не получают выдуманную точку — они
+  показаны отдельным списком.

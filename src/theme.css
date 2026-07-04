@@ -1,0 +1,83 @@
+:root {
+  --navy: #020b18;
+  --ink: #061126;
+  --paper: #f7f5ef;
+  --gold: #c9972b;
+  --line: #d6d1c7;
+  --telegram: #27a7e7;
+
+  --paper-muted: #eae7dd;
+  --ink-soft: rgba(6, 17, 38, 0.62);
+  --ink-faint: rgba(6, 17, 38, 0.38);
+
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
+
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Leaflet cluster styling, brand-aligned */
+.plm-cluster-icon {
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+}
+
+.leaflet-popup-tip {
+  background: var(--paper);
+}
