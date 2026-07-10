@@ -153,6 +153,7 @@ def convert(input_path: Path):
     i_nodes_narrative = col(header, "Исторические узлы")
     i_understand = col(header, "Что должен понять новичок")
     i_status = col(header, "Статус")
+    i_telegram = col(header, "Ссылка на урок (Telegram)")
     lessons = []
     for r in rows:
         if not r[i_lid]:
@@ -163,6 +164,7 @@ def convert(input_path: Path):
             "nodesNarrative": r[i_nodes_narrative],
             "whatToUnderstand": r[i_understand],
             "status": r[i_status],
+            "telegramUrl": r[i_telegram],
         })
 
     # ---- 01_Master_Facts ----
@@ -175,6 +177,7 @@ def convert(input_path: Path):
         "URL источника", "Уверенность 1–5", "Комментарий для лекции",
         "Визуальная идея для карты", "Теги", "Проверить позже",
         "Координаты (lat, lon)", "Подветка (детали)", "Тип узла",
+        "Флагман урока (да/нет)",
     ]}
 
     nodes = []
@@ -213,7 +216,30 @@ def convert(input_path: Path):
             "coordinates": parse_coords(r[idx["Координаты (lat, lon)"]]),
             "subBranch": r[idx["Подветка (детали)"]],
             "nodeType": r[idx["Тип узла"]],
+            "flagship": str(r[idx["Флагман урока (да/нет)"]] or "").strip().lower() == "да",
         })
+
+    # Journey Mode строит маршрут строго из этих узлов — если разметка в xlsx
+    # неполная, лучше сообщить сразу, а не молча показать неполный/пустой маршрут.
+    flagship_nodes = [n for n in nodes if n["flagship"]]
+    flagship_by_lesson = {}
+    for n in flagship_nodes:
+        flagship_by_lesson.setdefault(n["lessonLink"], []).append(n["id"])
+    expected_lessons = [f"PL-{i:03d}" for i in range(1, 8)]
+    for lesson in expected_lessons:
+        ids = flagship_by_lesson.get(lesson, [])
+        if len(ids) != 1:
+            print(
+                f"ВНИМАНИЕ: для {lesson} найдено {len(ids)} узлов с «Флагман урока» = да "
+                f"(ожидался ровно 1): {ids}",
+                file=sys.stderr,
+            )
+    stray_lessons = set(flagship_by_lesson) - set(expected_lessons)
+    if stray_lessons:
+        print(
+            f"ВНИМАНИЕ: флагманские узлы с неожиданной привязкой к уроку: {stray_lessons}",
+            file=sys.stderr,
+        )
 
     filters = {
         "lessons": sorted({n["lessonLink"] for n in nodes if n["lessonLink"]}),
@@ -230,6 +256,11 @@ def convert(input_path: Path):
         "lessons": lessons,
         "filters": filters,
         "nodes": nodes,
+        "journeyNodeIds": [
+            flagship_by_lesson[lesson][0]
+            for lesson in expected_lessons
+            if flagship_by_lesson.get(lesson)
+        ],
         "nodesWithoutCoordinates": [n["id"] for n in nodes if n["coordinates"] is None],
     }
 

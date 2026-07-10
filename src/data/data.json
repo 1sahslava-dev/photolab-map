@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T11:21:55.736115+00:00",
+  "generatedAt": "2026-07-09T05:32:21.438112+00:00",
   "sourceFile": "master.xlsx",
   "branches": [
     {
@@ -52,8 +52,8 @@
     },
     {
       "name": "Негатив-позитив",
-      "includes": "бумажный негатив, калотип, стеклянный негатив, сухая желатиновая пластина, копирование",
-      "lessons": "PL-004 / PL-006",
+      "includes": "бумажный негатив, калотип, стеклянный негатив, сухая желатиновая пластина, рулонная плёнка, копирование",
+      "lessons": "PL-004 / PL-006 / PL-007",
       "colorName": "зелёный тёмный",
       "colorHex": "#00724c",
       "comment": "Главная идея, которая победила исторически."
@@ -345,6 +345,69 @@
       "url": "https://www.eastman.org/blog/dry-plates-woods-using-19th-century-photographic-processes-capture-letchworth-state-park",
       "usedFor": "dry plates coated with gelatin emulsion, practical freedom, Eastman's role",
       "note": "музейный источник"
+    },
+    "SRC-035": {
+      "id": "SRC-035",
+      "name": "Science Museum Group — Eastman-Walker roll holder",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co15879/eastman-walker-roll-holder",
+      "usedFor": "Eastman-Walker roll holder, 1885, made by Eastman Dry Plate and Film Company",
+      "note": "музейная карточка предмета"
+    },
+    "SRC-036": {
+      "id": "SRC-036",
+      "name": "George Eastman Museum — Two rare rolls of early Kodak film",
+      "url": "https://www.eastman.org/two-rare-rolls-early-kodak-film-acquired-george-eastman-museum",
+      "usedFor": "American Film 1885 with Eastman-Walker roll holder; Kodak film 1888; Kodak transparent film 1889",
+      "note": "музейный источник"
+    },
+    "SRC-037": {
+      "id": "SRC-037",
+      "name": "National Inventors Hall of Fame — Hannibal Goodwin",
+      "url": "https://www.invent.org/inductees/hannibal-goodwin",
+      "usedFor": "Goodwin and transparent flexible roll film on nitrocellulose base",
+      "note": "биографический/изобретательский источник"
+    },
+    "SRC-038": {
+      "id": "SRC-038",
+      "name": "Smithsonian NMAH — Original Kodak Camera, Serial No. 540",
+      "url": "https://americanhistory.si.edu/collections/object/nmah_760118",
+      "usedFor": "Original Kodak camera 1888, flexible roll film, 100 exposures, price/context",
+      "note": "музейная карточка предмета"
+    },
+    "SRC-039": {
+      "id": "SRC-039",
+      "name": "The Met — Kodak and the Rise of Amateur Photography",
+      "url": "https://www.metmuseum.org/essays/kodak-and-the-rise-of-amateur-photography",
+      "usedFor": "Kodak No. 1 camera, 100-exposure roll, factory processing/reloading, amateur photography",
+      "note": "музейный эссе-источник"
+    },
+    "SRC-040": {
+      "id": "SRC-040",
+      "name": "George Eastman Museum — From the Camera Obscura to the Revolutionary Kodak",
+      "url": "https://www.eastman.org/camera-obscura-revolutionary-kodak",
+      "usedFor": "Kodak launch 1888, camera patent and Kodak trademark on September 4, 1888",
+      "note": "музейный источник"
+    },
+    "SRC-041": {
+      "id": "SRC-041",
+      "name": "Kodak — Chronology of Film",
+      "url": "https://www.kodak.com/en/motion/page/chronology-of-film/",
+      "usedFor": "1889 first commercial transparent roll film, Eastman and research chemist, impact on motion picture camera",
+      "note": "официальная хронология компании"
+    },
+    "SRC-042": {
+      "id": "SRC-042",
+      "name": "Kodak — Milestones",
+      "url": "https://www.kodak.com/en/company/page/milestones/",
+      "usedFor": "1891 first daylight-loading camera; Kodak Park and film/paper manufacturing context",
+      "note": "официальная хронология компании"
+    },
+    "SRC-043": {
+      "id": "SRC-043",
+      "name": "National Science and Media Museum — Kodak Gallery",
+      "url": "https://www.scienceandmediamuseum.org.uk/whats-on/kodak-gallery",
+      "usedFor": "Kodak camera 1888 and Brownie 1900 as birth of popular photography",
+      "note": "музейный источник"
     }
   },
   "lessons": [
@@ -353,49 +416,64 @@
       "topic": "Камера-обскура и оптика",
       "nodesNarrative": "PL-HIST-0001…0008, 0013, 0028",
       "whatToUnderstand": "Свет умеет строить изображение, но ещё не сохраняет его.",
-      "status": "основа готова"
+      "status": "основа готова",
+      "telegramUrl": "https://t.me/photolab_vf"
     },
     {
       "id": "PL-002",
       "topic": "Ньепс и первая фиксация",
       "nodesNarrative": "PL-HIST-0009…0016",
       "whatToUnderstand": "Недостаточно увидеть изображение — его нужно зафиксировать.",
-      "status": "основа готова"
+      "status": "основа готова",
+      "telegramUrl": "https://t.me/photolab_vf"
     },
     {
       "id": "PL-003",
       "topic": "Дагеротип",
       "nodesNarrative": "PL-HIST-0017…0023, 0027",
       "whatToUnderstand": "Фотография стала публичной, резкой и убедительной, но изображение было уникальным.",
-      "status": "основа готова"
+      "status": "основа готова",
+      "telegramUrl": "https://t.me/photolab_vf"
     },
     {
       "id": "PL-004",
       "topic": "Тальбот, калотип, негатив-позитив",
       "nodesNarrative": "PL-HIST-0019…0026, 0029…0035",
       "whatToUnderstand": "Идея копирования победила: один негатив может дать много отпечатков.",
-      "status": "основа готова"
+      "status": "основа готова",
+      "telegramUrl": "https://t.me/photolab_vf"
     },
     {
       "id": "PL-005",
       "topic": "Мокрый коллодий",
       "nodesNarrative": "PL-HIST-0041…0048",
       "whatToUnderstand": "Резкость дагеротипа и тираж калотипа встретились на стеклянной влажной пластине.",
-      "status": "основа готова"
+      "status": "основа готова",
+      "telegramUrl": "https://t.me/photolab_vf"
     },
     {
       "id": "PL-006",
       "topic": "Сухие желатиновые пластины",
       "nodesNarrative": "PL-HIST-0049…0058",
       "whatToUnderstand": "Фотография освобождается от немедленной полевой химии: пластину можно купить, хранить, экспонировать и проявлять позже.",
-      "status": "основа заполнена"
+      "status": "основа заполнена",
+      "telegramUrl": "https://t.me/photolab_vf"
+    },
+    {
+      "id": "PL-007",
+      "topic": "Рулонная плёнка и Kodak",
+      "nodesNarrative": "PL-HIST-0059…0068",
+      "whatToUnderstand": "Фотография освобождается от стеклянной пластины: рулонный носитель, Kodak и сервис обработки делают съёмку проще и ближе к массовому пользователю.",
+      "status": "основа заполнена",
+      "telegramUrl": "https://t.me/photolab_vf"
     },
     {
       "id": "будущие PL",
-      "topic": "Расширение после PL-006",
-      "nodesNarrative": "плёнка, цвет, Leica, Kodak, цифровая фотография, AI",
-      "whatToUnderstand": "Фотография станет массовой, цветной, цифровой и вычислительной.",
-      "status": "планируется"
+      "topic": "Расширение после PL-007",
+      "nodesNarrative": "Brownie, массовая snapshot-культура, 35 мм, Leica, цвет, цифровая фотография, AI",
+      "whatToUnderstand": "Фотография станет дешёвой, массовой, компактной, цветной, цифровой и вычислительной.",
+      "status": "планируется",
+      "telegramUrl": null
     }
   ],
   "filters": {
@@ -406,6 +484,7 @@
       "PL-004",
       "PL-005",
       "PL-006",
+      "PL-007",
       "будущие PL",
       "межурочный узел"
     ],
@@ -492,7 +571,8 @@
         "lon": 31.2357
       },
       "subBranch": null,
-      "nodeType": "Фундаментальная предпосылка"
+      "nodeType": "Фундаментальная предпосылка",
+      "flagship": true
     },
     {
       "id": "PL-HIST-0002",
@@ -530,7 +610,8 @@
         "lon": 4.7005
       },
       "subBranch": null,
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0003",
@@ -568,7 +649,8 @@
         "lon": 9.1582
       },
       "subBranch": null,
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0004",
@@ -606,7 +688,8 @@
         "lon": 14.2681
       },
       "subBranch": null,
-      "nodeType": "Применение / жанр"
+      "nodeType": "Применение / жанр",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0005",
@@ -644,7 +727,8 @@
         "lon": 14.4378
       },
       "subBranch": "Оптика / терминология",
-      "nodeType": "Терминология / язык"
+      "nodeType": "Терминология / язык",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0006",
@@ -682,7 +766,8 @@
         "lon": 14.2858
       },
       "subBranch": "Оптика / камера",
-      "nodeType": "Фундаментальная предпосылка"
+      "nodeType": "Фундаментальная предпосылка",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0007",
@@ -720,7 +805,8 @@
         "lon": 14.2858
       },
       "subBranch": null,
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0008",
@@ -758,7 +844,8 @@
         "lon": 9.9534
       },
       "subBranch": null,
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0009",
@@ -797,7 +884,8 @@
         "lon": 11.3833
       },
       "subBranch": null,
-      "nodeType": "Фундаментальная предпосылка"
+      "nodeType": "Фундаментальная предпосылка",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0010",
@@ -835,7 +923,8 @@
         "lon": 15.9992
       },
       "subBranch": "Фотохимия / фиксация",
-      "nodeType": "Фундаментальная предпосылка"
+      "nodeType": "Фундаментальная предпосылка",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0011",
@@ -873,7 +962,8 @@
         "lon": -2.1794
       },
       "subBranch": "Фотохимия / первая фиксация",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0012",
@@ -911,7 +1001,8 @@
         "lon": -0.1278
       },
       "subBranch": "Фотохимия / публикация",
-      "nodeType": "Публикация / объявление"
+      "nodeType": "Публикация / объявление",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0013",
@@ -949,7 +1040,8 @@
         "lon": -0.1278
       },
       "subBranch": null,
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0014",
@@ -988,7 +1080,8 @@
         "lon": 4.8892
       },
       "subBranch": "Первая фиксация / проблема постоянства",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0015",
@@ -1026,7 +1119,8 @@
         "lon": 4.8892
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0016",
@@ -1065,7 +1159,8 @@
         "lon": 4.8892
       },
       "subBranch": "Гелиография / первая сохранившаяся фотография",
-      "nodeType": "Ключевой исторический узел"
+      "nodeType": "Ключевой исторический узел",
+      "flagship": true
     },
     {
       "id": "PL-HIST-0017",
@@ -1104,7 +1199,8 @@
         "lon": 2.3522
       },
       "subBranch": "Передача идеи / развитие процесса",
-      "nodeType": "Связь / переход"
+      "nodeType": "Связь / переход",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0018",
@@ -1142,7 +1238,8 @@
         "lon": 4.8892
       },
       "subBranch": "Передача идеи / развитие процесса",
-      "nodeType": "Связь / переход"
+      "nodeType": "Связь / переход",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0019",
@@ -1180,7 +1277,8 @@
         "lon": -2.118
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0020",
@@ -1219,7 +1317,8 @@
         "lon": -2.118
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0021",
@@ -1257,7 +1356,8 @@
         "lon": 2.3522
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": true
     },
     {
       "id": "PL-HIST-0022",
@@ -1296,7 +1396,8 @@
         "lon": 2.3522
       },
       "subBranch": "Дагеротип / публичное объявление",
-      "nodeType": "Публикация / объявление"
+      "nodeType": "Публикация / объявление",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0023",
@@ -1335,7 +1436,8 @@
         "lon": 2.3522
       },
       "subBranch": "Дагеротип / распространение",
-      "nodeType": "Публикация / объявление"
+      "nodeType": "Публикация / объявление",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0024",
@@ -1373,7 +1475,8 @@
         "lon": -0.1278
       },
       "subBranch": "Фотогенный рисунок / публикация",
-      "nodeType": "Публикация / объявление"
+      "nodeType": "Публикация / объявление",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0025",
@@ -1411,7 +1514,8 @@
         "lon": -0.1278
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0026",
@@ -1450,7 +1554,8 @@
         "lon": -0.1278
       },
       "subBranch": null,
-      "nodeType": "Терминология / язык"
+      "nodeType": "Терминология / язык",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0027",
@@ -1488,7 +1593,8 @@
         "lon": 2.3522
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0028",
@@ -1526,7 +1632,8 @@
         "lon": -0.1278
       },
       "subBranch": "Оптические инструменты / 3D",
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0029",
@@ -1564,7 +1671,8 @@
         "lon": -2.118
       },
       "subBranch": "Негатив-позитив / проявление",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0030",
@@ -1602,7 +1710,8 @@
         "lon": -74.006
       },
       "subBranch": "Научная фотография",
-      "nodeType": "Научное применение / пример"
+      "nodeType": "Научное применение / пример",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0031",
@@ -1641,7 +1750,8 @@
         "lon": -0.1278
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": true
     },
     {
       "id": "PL-HIST-0032",
@@ -1679,7 +1789,8 @@
         "lon": -0.1278
       },
       "subBranch": null,
-      "nodeType": "Тиражирование / публикация"
+      "nodeType": "Тиражирование / публикация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0033",
@@ -1717,7 +1828,8 @@
         "lon": -0.1278
       },
       "subBranch": "Цианотипия",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0034",
@@ -1755,7 +1867,8 @@
         "lon": 0.5217
       },
       "subBranch": "Фотокнига / научная документация",
-      "nodeType": "Тиражирование / публикация"
+      "nodeType": "Тиражирование / публикация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0035",
@@ -1794,7 +1907,8 @@
         "lon": -0.1278
       },
       "subBranch": "Фотокнига / тиражирование",
-      "nodeType": "Тиражирование / публикация"
+      "nodeType": "Тиражирование / публикация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0036",
@@ -1832,7 +1946,8 @@
         "lon": -71.0589
       },
       "subBranch": "Научная / медицинская фотография",
-      "nodeType": "Научное применение / пример"
+      "nodeType": "Научное применение / пример",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0037",
@@ -1870,7 +1985,8 @@
         "lon": 3.0573
       },
       "subBranch": null,
-      "nodeType": "Распространение / коммерциализация"
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0038",
@@ -1908,7 +2024,8 @@
         "lon": 2.3522
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0039",
@@ -1946,7 +2063,8 @@
         "lon": -75.1652
       },
       "subBranch": null,
-      "nodeType": "Распространение / коммерциализация"
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0040",
@@ -1984,7 +2102,8 @@
         "lon": 3.0573
       },
       "subBranch": null,
-      "nodeType": "Тиражирование / публикация"
+      "nodeType": "Тиражирование / публикация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0041",
@@ -2022,7 +2141,8 @@
         "lon": -0.1278
       },
       "subBranch": null,
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": true
     },
     {
       "id": "PL-HIST-0042",
@@ -2060,7 +2180,8 @@
         "lon": -0.1278
       },
       "subBranch": "Мокрый коллодий / распространение",
-      "nodeType": "Распространение / коммерциализация"
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0043",
@@ -2099,7 +2220,8 @@
         "lon": -0.1278
       },
       "subBranch": "Мокрый коллодий / химия",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0044",
@@ -2137,7 +2259,8 @@
         "lon": -0.1278
       },
       "subBranch": "Мокрый коллодий / камера",
-      "nodeType": "Инструмент / устройство"
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0045",
@@ -2175,7 +2298,8 @@
         "lon": -0.1278
       },
       "subBranch": "Уникальный позитив / мокрый коллодий",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0046",
@@ -2213,7 +2337,8 @@
         "lon": -71.0589
       },
       "subBranch": "Уникальный позитив / мокрый коллодий",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0047",
@@ -2249,7 +2374,8 @@
       "checkLater": null,
       "coordinates": null,
       "subBranch": "Мокрый коллодий + печать",
-      "nodeType": "Тиражирование / публикация"
+      "nodeType": "Тиражирование / публикация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0048",
@@ -2285,7 +2411,8 @@
       "checkLater": "Уточнить авторство/патенты 1856 по отдельным источникам.",
       "coordinates": null,
       "subBranch": "Уникальный позитив / массовый портрет",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0049",
@@ -2325,7 +2452,8 @@
         "lon": -0.1278
       },
       "subBranch": "Сухие желатиновые пластины / химия",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": true
     },
     {
       "id": "PL-HIST-0050",
@@ -2364,7 +2492,8 @@
         "lon": -2.9916
       },
       "subBranch": "Сухие желатиновые пластины / коммерциализация",
-      "nodeType": "Распространение / коммерциализация"
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0051",
@@ -2403,7 +2532,8 @@
         "lon": -0.1278
       },
       "subBranch": "Сухие желатиновые пластины / повышение чувствительности",
-      "nodeType": "Технология / процесс"
+      "nodeType": "Технология / процесс",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0052",
@@ -2442,7 +2572,8 @@
         "lon": -0.1278
       },
       "subBranch": "Сухие желатиновые пластины / переход от мокрого коллодия",
-      "nodeType": "Связь / переход"
+      "nodeType": "Связь / переход",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0053",
@@ -2478,7 +2609,8 @@
       "checkLater": null,
       "coordinates": null,
       "subBranch": "Сухие желатиновые пластины / скорость и движение",
-      "nodeType": "Применение / жанр"
+      "nodeType": "Применение / жанр",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0054",
@@ -2518,7 +2650,8 @@
         "lon": -77.6088
       },
       "subBranch": "Сухие желатиновые пластины / американская индустрия",
-      "nodeType": "Распространение / коммерциализация"
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0055",
@@ -2557,7 +2690,8 @@
         "lon": -77.6088
       },
       "subBranch": "Сухие желатиновые пластины / бизнес и масштабирование",
-      "nodeType": "Распространение / коммерциализация"
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0056",
@@ -2593,7 +2727,8 @@
       "checkLater": null,
       "coordinates": null,
       "subBranch": "Сухие желатиновые пластины / доминирующая практика",
-      "nodeType": "Ключевой исторический узел"
+      "nodeType": "Ключевой исторический узел",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0057",
@@ -2629,7 +2764,8 @@
       "checkLater": null,
       "coordinates": null,
       "subBranch": "Сухие желатиновые пластины / мобильность",
-      "nodeType": "Связь / переход"
+      "nodeType": "Связь / переход",
+      "flagship": false
     },
     {
       "id": "PL-HIST-0058",
@@ -2669,8 +2805,424 @@
         "lon": -77.6088
       },
       "subBranch": "Сухие желатиновые пластины / мост к плёнке",
-      "nodeType": "Связь / переход"
+      "nodeType": "Связь / переход",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0059",
+      "dateLabel": "1884",
+      "dateAccuracy": "год",
+      "dateSortStart": 1884,
+      "dateSortEnd": 1884,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Eastman Dry Plate and Film Company",
+      "event": "Компания Истмена меняет акцент с одних сухих пластин на поиск более удобного рулонного носителя для фотографии.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Eastman Dry Plate and Film Company / roll-film direction",
+      "whatChanged": "После сухих пластин следующей проблемой становится не химия, а носитель: стекло нужно заменить чем-то гибким и лёгким.",
+      "prevLink": "Сухие желатиновые пластины освободили фотографа от мокрой лаборатории, но не от тяжёлого стекла.",
+      "nextLink": "Eastman-Walker roll holder и бумажная рулонная плёнка",
+      "branchStatus": "Связь / переход",
+      "importance": 4,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-031",
+      "sourceName": "Kodak — History",
+      "sourceUrl": "https://www.kodak.com/en/company/page/history/",
+      "confidence": 4,
+      "lectureComment": "В уроке это мост: фотография уже стала сухой, но ещё остаётся стеклянной. Истмен ищет следующий уровень удобства.",
+      "mapVisualIdea": "Стеклянная пластина на карте превращается в намотанную ленту.",
+      "tags": [
+        "PL007",
+        "Eastman",
+        "roll-film",
+        "Rochester",
+        "bridge"
+      ],
+      "checkLater": "Уточнить, нужна ли отдельная строка по юридическому переименованию компании 1884 или достаточно оставить как контекст.",
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / бизнес-переход",
+      "nodeType": "Связь / переход",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0060",
+      "dateLabel": "1885",
+      "dateAccuracy": "год",
+      "dateSortStart": 1885,
+      "dateSortEnd": 1885,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Уильям Холл Уокер",
+      "event": "Появляется Eastman-Walker roll holder — держатель, позволявший использовать рулонный носитель в камерах, рассчитанных на пластины.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Eastman-Walker roll holder",
+      "whatChanged": "Камера начинает работать не с одиночными стеклянными пластинами, а с последовательностью кадров на рулоне.",
+      "prevLink": "Сухая пластина как готовый негативный материал",
+      "nextLink": "American Film и первые попытки коммерческого рулонного процесса",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-035",
+      "sourceName": "Science Museum Group — Eastman-Walker roll holder",
+      "sourceUrl": "https://collection.sciencemuseumgroup.org.uk/objects/co15879/eastman-walker-roll-holder",
+      "confidence": 5,
+      "lectureComment": "Для новичка: рулонная плёнка сначала вошла не как маленькая камера Kodak, а как приставка/держатель для уже существующих камер.",
+      "mapVisualIdea": "На карте: рядом с камерой появляется рулонный модуль вместо стопки стеклянных пластин.",
+      "tags": [
+        "PL007",
+        "EastmanWalker",
+        "roll-holder",
+        "Rochester"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / держатель",
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0061",
+      "dateLabel": "1885",
+      "dateAccuracy": "год",
+      "dateSortStart": 1885,
+      "dateSortEnd": 1885,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Eastman Dry Plate and Film Company",
+      "event": "Eastman American Film с бумажной основой вводится вместе с Eastman-Walker roll holder и предлагается профессиональным фотографам.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "American Film / paper-based roll film",
+      "whatChanged": "Рулонный носитель становится реальным коммерческим продуктом, но бумажная основа ещё даёт ограничения по качеству.",
+      "prevLink": "Eastman-Walker roll holder",
+      "nextLink": "Kodak camera 1888 и прозрачная рулонная плёнка 1889",
+      "branchStatus": "Переходная технология",
+      "importance": 4,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-036",
+      "sourceName": "George Eastman Museum — Two rare rolls of early Kodak film",
+      "sourceUrl": "https://www.eastman.org/two-rare-rolls-early-kodak-film-acquired-george-eastman-museum",
+      "confidence": 5,
+      "lectureComment": "Важно показать честно: первая рулонная плёнка была удобнее стекла, но ещё не идеальна по изображению.",
+      "mapVisualIdea": "Пунктирная лента: рулон уже появился, но ещё требует улучшения.",
+      "tags": [
+        "PL007",
+        "AmericanFilm",
+        "paper-roll-film",
+        "Eastman"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / бумажная основа",
+      "nodeType": "Технология / процесс",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0062",
+      "dateLabel": "1887",
+      "dateAccuracy": "год",
+      "dateSortStart": 1887,
+      "dateSortEnd": 1887,
+      "country": "США",
+      "city": "Ньюарк, Нью-Джерси",
+      "person": "Ганнибал Гудвин",
+      "event": "Гудвин подаёт патентную заявку на прозрачную гибкую фотографическую плёнку на нитроцеллюлозной основе.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Flexible transparent nitrocellulose film",
+      "whatChanged": "Рулонная фотография получает направление к прозрачной гибкой основе, которая лучше подходит для качественного негатива и будущего кино.",
+      "prevLink": "Ограничения бумажной рулонной плёнки",
+      "nextLink": "Прозрачная плёнка Eastman/Reichenbach и патентные споры вокруг целлулоидной основы",
+      "branchStatus": "Исторически важная ограниченная ветка",
+      "importance": 4,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-037",
+      "sourceName": "National Inventors Hall of Fame — Hannibal Goodwin",
+      "sourceUrl": "https://www.invent.org/inductees/hannibal-goodwin",
+      "confidence": 4,
+      "lectureComment": "Этот узел нужен как параллельная ветка: история плёнки — не только Истмен, но и спорная линия Гудвина.",
+      "mapVisualIdea": "От основной линии Kodak отходит пунктирная ветка к Ньюарку: изобретатель вне большой фабрики.",
+      "tags": [
+        "PL007",
+        "Goodwin",
+        "celluloid",
+        "transparent-film",
+        "patent"
+      ],
+      "checkLater": "Проверить формулировку: заявка 1887, патент выдан позже; не писать как мгновенно утверждённый патент.",
+      "coordinates": {
+        "lat": 40.7357,
+        "lon": -74.1724
+      },
+      "subBranch": "Рулонная плёнка / целлулоидная основа",
+      "nodeType": "Технология / процесс",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0063",
+      "dateLabel": "1888",
+      "dateAccuracy": "год",
+      "dateSortStart": 1888,
+      "dateSortEnd": 1888,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Kodak",
+      "event": "Появляется первая камера Kodak: простая box-camera, заранее заряженная рулоном на 100 снимков.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Original Kodak camera / roll-film camera",
+      "whatChanged": "Фотография становится не только технологией профессионалов: пользователь нажимает кнопку, а сложную обработку берёт на себя компания.",
+      "prevLink": "American Film и попытки заменить стеклянную пластину рулонным носителем",
+      "nextLink": "Сервисная модель Kodak и массовая любительская фотография",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-038",
+      "sourceName": "Smithsonian NMAH — Original Kodak Camera, Serial No. 540",
+      "sourceUrl": "https://americanhistory.si.edu/collections/object/nmah_760118",
+      "confidence": 5,
+      "lectureComment": "Это флагман PL-007: камера Kodak изменила не только материал, но и саму роль фотографа.",
+      "mapVisualIdea": "Главный узел: маленькая box-camera с рулоном внутри, от неё расходится линия к массовой фотографии.",
+      "tags": [
+        "PL007",
+        "Kodak",
+        "roll-film-camera",
+        "Eastman",
+        "Rochester"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / Kodak camera",
+      "nodeType": "Ключевой исторический узел",
+      "flagship": true
+    },
+    {
+      "id": "PL-HIST-0064",
+      "dateLabel": "1888",
+      "dateAccuracy": "год",
+      "dateSortStart": 1888,
+      "dateSortEnd": 1888,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Kodak",
+      "event": "Kodak продаёт камеру уже заряженной плёнкой; после съёмки всю камеру отправляют в Рочестер для проявки, печати и перезарядки.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Kodak processing service model",
+      "whatChanged": "Фотограф больше не обязан быть химиком и печатником: процесс съёмки отделяется от лабораторной обработки.",
+      "prevLink": "Original Kodak camera 1888",
+      "nextLink": "Слоган «You press the button, we do the rest» и рост любительской фотографии",
+      "branchStatus": "Распространение / коммерциализация",
+      "importance": 5,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-039",
+      "sourceName": "The Met — Kodak and the Rise of Amateur Photography",
+      "sourceUrl": "https://www.metmuseum.org/essays/kodak-and-the-rise-of-amateur-photography",
+      "confidence": 5,
+      "lectureComment": "Главная мысль для лекции: Kodak продавал не просто камеру, а целую систему — камера + плёнка + обработка.",
+      "mapVisualIdea": "Маршрут: камера у пользователя → фабрика в Рочестере → готовые отпечатки возвращаются обратно.",
+      "tags": [
+        "PL007",
+        "Kodak",
+        "service-model",
+        "amateur-photography"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / сервисная модель",
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0065",
+      "dateLabel": "4 сентября 1888",
+      "dateAccuracy": "точная дата",
+      "dateSortStart": 1888,
+      "dateSortEnd": 1888,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Kodak",
+      "event": "Истмен получает патент на камеру Kodak и регистрирует товарный знак Kodak.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Kodak patent and trademark",
+      "whatChanged": "Рулонная камера становится не только техническим устройством, но и брендом, который легко запомнить и продвигать.",
+      "prevLink": "Original Kodak camera 1888",
+      "nextLink": "Переименование компании и формирование Kodak как массового фотобренда",
+      "branchStatus": "Распространение / коммерциализация",
+      "importance": 4,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-040",
+      "sourceName": "George Eastman Museum — From the Camera Obscura to the Revolutionary Kodak",
+      "sourceUrl": "https://www.eastman.org/camera-obscura-revolutionary-kodak",
+      "confidence": 5,
+      "lectureComment": "Этот узел можно использовать коротко: фотография входит в эпоху бренда, рекламы и простого обещания пользователю.",
+      "mapVisualIdea": "На карте: рядом с Рочестером появляется знак KODAK как брендовый маяк.",
+      "tags": [
+        "PL007",
+        "Kodak",
+        "patent",
+        "trademark",
+        "brand"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / патент и бренд",
+      "nodeType": "Публикация / объявление",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0066",
+      "dateLabel": "1889",
+      "dateAccuracy": "год",
+      "dateSortStart": 1889,
+      "dateSortEnd": 1889,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Генри Райхенбах",
+      "event": "На рынок выходит первая коммерческая прозрачная рулонная плёнка, усовершенствованная Истменом и его химиком.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Commercial transparent roll film",
+      "whatChanged": "Плёнка становится более удобной для качественного негатива и открывает путь не только фотографии, но и движущемуся изображению.",
+      "prevLink": "Бумажная American Film и поиски прозрачной гибкой основы",
+      "nextLink": "Развитие кинематографа и дальнейшая массовая плёночная фотография",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-041",
+      "sourceName": "Kodak — Chronology of Film",
+      "sourceUrl": "https://www.kodak.com/en/motion/page/chronology-of-film/",
+      "confidence": 5,
+      "lectureComment": "В уроке важно отличить: Kodak 1888 уже был рулонной камерой, но прозрачная рулонная плёнка как коммерческий материал — отдельный шаг 1889 года.",
+      "mapVisualIdea": "Рулон из полупрозрачной ленты, уходящий от фотографии к кино.",
+      "tags": [
+        "PL007",
+        "transparent-roll-film",
+        "Reichenbach",
+        "Eastman",
+        "motion-picture"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / прозрачная плёнка",
+      "nodeType": "Технология / процесс",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0067",
+      "dateLabel": "1891",
+      "dateAccuracy": "год",
+      "dateSortStart": 1891,
+      "dateSortEnd": 1891,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Kodak / Eastman Company",
+      "event": "Kodak выводит первую daylight-loading camera: фотограф может перезаряжать плёнку без тёмной комнаты.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Daylight-loading roll-film camera",
+      "whatChanged": "Рулонная фотография становится ещё удобнее: перезарядка перестаёт требовать полной темноты.",
+      "prevLink": "Kodak camera 1888 and factory service model",
+      "nextLink": "Pocket Kodak, Folding Pocket Kodak, Brownie and standard roll-film formats",
+      "branchStatus": "Главная линия",
+      "importance": 4,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-042",
+      "sourceName": "Kodak — Milestones",
+      "sourceUrl": "https://www.kodak.com/en/company/page/milestones/",
+      "confidence": 5,
+      "lectureComment": "Это не главный герой урока, но важный шаг удобства: фотограф получает больше самостоятельности.",
+      "mapVisualIdea": "На карте: маленькая камера открывается на свету без тёмной комнаты.",
+      "tags": [
+        "PL007",
+        "daylight-loading",
+        "roll-film",
+        "Kodak"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / дневная перезарядка",
+      "nodeType": "Технология / процесс",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0068",
+      "dateLabel": "1900",
+      "dateAccuracy": "год",
+      "dateSortStart": 1900,
+      "dateSortEnd": 1900,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Eastman Kodak / Brownie",
+      "event": "Камера Brownie делает рулонную фотографию ещё более дешёвой и доступной для массового пользователя.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Kodak Brownie / mass snapshot photography",
+      "whatChanged": "Идея Kodak доводится до массового уровня: фотография становится повседневным занятием и семейной практикой.",
+      "prevLink": "Kodak camera 1888 and roll-film service model",
+      "nextLink": "PL-008: массовая любительская фотография, snapshot-культура и Brownie как социальный перелом",
+      "branchStatus": "Связь / переход",
+      "importance": 4,
+      "lessonLink": "PL-007",
+      "sourceId": "SRC-043",
+      "sourceName": "National Science and Media Museum — Kodak Gallery",
+      "sourceUrl": "https://www.scienceandmediamuseum.org.uk/whats-on/kodak-gallery",
+      "confidence": 5,
+      "lectureComment": "Это мост к следующему уроку: Kodak сделал фотографию проще, Brownie сделает её по-настоящему массовой.",
+      "mapVisualIdea": "От Kodak 1888 линия идёт к дешёвой коробочной камере Brownie и семейным снимкам.",
+      "tags": [
+        "PL007",
+        "Brownie",
+        "snapshot",
+        "mass-photography",
+        "future-PL"
+      ],
+      "checkLater": "Решить позже: Brownie оставить как мост в PL-007 или вынести главным узлом PL-008.",
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "Рулонная плёнка / массовая фотография",
+      "nodeType": "Связь / переход",
+      "flagship": false
     }
+  ],
+  "journeyNodeIds": [
+    "PL-HIST-0001",
+    "PL-HIST-0016",
+    "PL-HIST-0021",
+    "PL-HIST-0031",
+    "PL-HIST-0041",
+    "PL-HIST-0049",
+    "PL-HIST-0063"
   ],
   "nodesWithoutCoordinates": [
     "PL-HIST-0047",

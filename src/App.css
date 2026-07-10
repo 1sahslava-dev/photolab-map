@@ -4,6 +4,16 @@
   height: 100vh;
 }
 
+/* ---- Explore Mode: тёмная аналитическая тема (правка 31) ----
+   Scoped через data-mode на .app-shell, а не глобальным переопределением
+   --paper/--ink/etc — Journey Mode должен остаться полностью нетронутым.
+   Правая панель карточки (.app-side) и тело панели фильтров (.filters-body)
+   намеренно исключены из этой темы и остаются светлыми — см. соответствующие
+   правила ниже. */
+.app-shell[data-mode="explore"] {
+  background: var(--navy);
+}
+
 .app-header {
   display: flex;
   align-items: baseline;
@@ -29,17 +39,100 @@
   color: var(--paper);
 }
 
+.app-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .app-header-meta {
   font-size: 13px;
   color: rgba(247, 245, 239, 0.6);
   white-space: nowrap;
 }
 
+.mode-switcher {
+  display: flex;
+  border: 1px solid rgba(247, 245, 239, 0.25);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.mode-switcher-btn {
+  border: none;
+  background: transparent;
+  color: rgba(247, 245, 239, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.mode-switcher-btn:hover {
+  color: var(--paper);
+}
+
+.mode-switcher-btn--active {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.mode-switcher-btn--active:hover {
+  color: var(--navy);
+}
+
+/* Кнопка "Исследование" в активном состоянии — тёмный фон + золотая обводка,
+   а не золотая заливка (правка 31) — читается как переключение "настроения"
+   интерфейса на тёмную аналитическую тему. "Маршрут" не меняется. */
+.app-shell[data-mode="explore"] .mode-switcher-btn--active {
+  background: var(--navy);
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+}
+
+.app-shell[data-mode="explore"] .mode-switcher-btn--active:hover {
+  color: var(--gold);
+}
+
 /* ---- filters ---- */
 .filters-panel {
   background: var(--paper);
   border-bottom: 1px solid var(--line);
-  padding: 12px 28px;
+  padding: 10px 28px;
+}
+
+.filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filters-toggle {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filters-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.filters-toggle--active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201, 151, 43, 0.08);
+}
+
+.filters-body {
+  padding-top: 12px;
 }
 
 .filters-row {
@@ -104,6 +197,31 @@
   font-weight: 600;
 }
 
+/* Explore Mode (правка 31): шапка фильтров — тёмная, как и остальной
+   аналитический интерфейс. Тело панели (сами фильтры, .filters-body) —
+   намеренное исключение, остаётся светлым (см. бриф) — у него своя светлая
+   подложка, перекрывающая тёмный фон .filters-panel в своей области. */
+.app-shell[data-mode="explore"] .filters-panel {
+  background: var(--navy);
+  border-bottom-color: var(--explore-coast);
+}
+
+.app-shell[data-mode="explore"] .filters-toggle {
+  border-color: var(--line);
+  color: var(--paper);
+}
+
+.app-shell[data-mode="explore"] .filters-count {
+  color: var(--explore-text-soft);
+}
+
+.app-shell[data-mode="explore"] .filters-body {
+  background: var(--paper);
+  margin: 12px -28px -10px;
+  padding: 12px 28px 10px;
+  border-top: 1px solid var(--line);
+}
+
 .branch-legend {
   display: flex;
   flex-wrap: wrap;
@@ -149,6 +267,15 @@
   flex: 1;
   position: relative;
   background: var(--paper);
+  border: 1px solid var(--line);
+  margin: 10px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.app-shell[data-mode="explore"] .app-map {
+  background: var(--ink);
+  border-color: var(--explore-coast);
 }
 
 .app-side {
@@ -159,6 +286,12 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+}
+
+/* Journey Mode: карточка шире, чем в Explore Mode — редакционный текст
+   читается плохо в узкой колонке (см. правку 22, пункт 3). */
+.app-side--journey {
+  width: 400px;
 }
 
 /* ---- node card ---- */
@@ -197,10 +330,166 @@
   color: var(--ink-soft);
 }
 
+.node-card-journey-step {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pl-gold);
+  margin-bottom: 8px;
+}
+
 .node-card h3 {
   font-size: 17px;
   line-height: 1.35;
   margin-bottom: 8px;
+}
+
+/* ---- Journey Mode: storytelling card, не запись из базы (см. правку 12) ---- */
+.node-card--journey {
+  padding: 24px 20px;
+  background: var(--pl-ivory);
+}
+
+.node-card-journey-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: baseline;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.node-card-journey-lesson {
+  font-weight: 700;
+  color: var(--pl-gold);
+}
+
+/* Лейбл над "Что изменилось"/"Почему это важно" — эти блоки уже выделены
+   акцент-полосой слева, лейбл лишь тихая подпись, не конкурирует по весу. */
+.node-card-journey-label {
+  display: block;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+
+/* Большой редакционный заголовок шага — самый крупный и весомый текст
+   карточки (см. правку 19); короткая самостоятельная строка, а не длинное
+   техническое "событие" из базы (то теперь внутри обычного блока "Главная
+   идея" ниже, наравне с "Что изменилось"/"Почему это важно"). */
+.node-card-journey-headline {
+  margin: 0 0 24px;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+/* Смысловые блоки "Главная идея"/"Что изменилось"/"Почему это важно" — акцент-полоса слева
+   в цвете ветки узла вместо одинаковых подряд идущих параграфов с общим
+   мелким лейблом сверху. */
+.node-card-journey-block {
+  margin-bottom: 28px;
+  padding-left: 14px;
+  border-left: 3px solid var(--chip-color, var(--pl-gold));
+}
+
+.node-card-journey-block p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* Кастомный disclosure "Подробнее" — плавная анимация раскрытия через
+   grid-template-rows (0fr -> 1fr) вместо резкого нативного <details>,
+   стрелка поворачивается при открытии. */
+.node-card-disclosure {
+  margin: 18px 0 4px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.node-card-disclosure-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+}
+
+.node-card-disclosure-toggle:hover {
+  color: var(--pl-gold);
+}
+
+.node-card-disclosure-chevron {
+  display: inline-block;
+  font-size: 11px;
+  transition: transform 0.2s ease;
+}
+
+.node-card-disclosure--open .node-card-disclosure-chevron {
+  transform: rotate(90deg);
+}
+
+.node-card-disclosure-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.node-card-disclosure--open .node-card-disclosure-body {
+  grid-template-rows: 1fr;
+}
+
+.node-card-disclosure-body-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.node-card-disclosure-body-inner > * + * {
+  margin-top: 12px;
+}
+
+/* Компактная строка чипов вместо вертикального списка "ЛЕЙБЛ: значение". */
+.node-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.node-card-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  background: #fff;
+}
+
+.node-card-journey-next-hint {
+  flex: 1;
+  margin: 0;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ink-faint);
+  padding: 9px 10px;
 }
 
 .node-card-meta {
@@ -251,6 +540,40 @@
   word-break: break-word;
 }
 
+/* Telegram Blue (--telegram) только для иконки — сам текст ссылки в цвете
+   текста карточки, не системная синяя ссылка браузера (см. правку 11). */
+.node-card-telegram {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.node-card-telegram:hover {
+  border-color: var(--telegram);
+  background: rgba(39, 167, 231, 0.08);
+}
+
+/* Journey Mode: кнопка крупнее, чем инлайновая ссылка в Explore Mode
+   (см. правку 22, пункт 3) — Explore-версию не трогаем. */
+.node-card--journey .node-card-telegram {
+  font-size: 14px;
+  padding: 11px 18px;
+  margin-bottom: 14px;
+}
+
+.node-card-telegram svg {
+  flex-shrink: 0;
+}
+
 .node-card-checklater {
   font-size: 12.5px;
   background: rgba(201, 151, 43, 0.12);
@@ -272,6 +595,36 @@
   background: var(--paper-muted);
   border-radius: 999px;
   padding: 2px 8px;
+}
+
+.node-card-journey-nav {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.node-card-journey-nav button {
+  flex: 1;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.node-card-journey-nav button:hover:not(:disabled) {
+  border-color: var(--pl-gold);
+  color: var(--pl-gold);
+}
+
+.node-card-journey-nav button:disabled {
+  opacity: 0.35;
+  cursor: default;
 }
 
 /* ---- unlocated list ---- */
@@ -338,14 +691,124 @@
   overflow-y: hidden;
 }
 
+/* Explore Mode: тёмный фон шкалы (правка 31) — .app-timeline общий для
+   обоих режимов (оборачивает либо <Timeline>, либо <JourneySteps>), поэтому
+   scoped через .app-shell[data-mode], а не изменяется напрямую. */
+.app-shell[data-mode="explore"] .app-timeline {
+  background: var(--navy);
+  border-top-color: var(--explore-coast);
+}
+
+/* ---- Journey Mode: шаги-карточки вместо линейки с датами (правка 12) ---- */
+.journey-steps {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 24px;
+}
+
+/* Карточки-шаги как навигация по образовательному сериалу — полупрозрачная
+   белая плашка на тёплой подложке, лёгкий подъём на hover, золотая рамка +
+   мягкое кольцо-свечение на активной (см. правку 17). */
+.journey-step {
+  flex: 1 1 0;
+  min-width: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  background: color-mix(in srgb, var(--pl-ivory) 78%, transparent);
+  border: 1px solid rgba(180, 150, 90, 0.22);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.journey-step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+.journey-step-number {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--chip-color, var(--pl-gold));
+  color: var(--pl-ivory);
+  font-size: 11.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-step-code {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.journey-step-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.25;
+}
+
+.journey-step-date {
+  font-size: 10.5px;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+.journey-step--active {
+  border: 2px solid var(--pl-gold);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 0 0 3px var(--pl-gold-soft);
+  transform: translateY(-4px);
+}
+
+.journey-step--active:hover {
+  transform: translateY(-4px);
+}
+
+.journey-step--active .journey-step-number {
+  background: var(--pl-gold);
+}
+
 .timeline {
   height: 100%;
   position: relative;
 }
 
+/* Подпись поверх шкалы (правка 24, пункт 2а) — sticky к левому краю
+   видимой области горизонтального скролла (.app-timeline), не уезжает при
+   прокрутке вместе с треком, но и не мешает кликам по точкам ниже. */
+.timeline-label {
+  position: sticky;
+  left: 14px;
+  top: 6px;
+  z-index: 5;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  /* Explore-exclusive компонент (Timeline.jsx) — тёмный фон шкалы задан
+     правкой 31, поэтому цвет сразу приглушённый светлый, а не --ink-faint
+     (замешан на --ink и был бы нечитаем на тёмном фоне). */
+  color: var(--explore-text-soft);
+  pointer-events: none;
+}
+
 .timeline--empty {
   padding: 20px;
-  color: var(--ink-faint);
+  color: var(--explore-text-soft);
   font-size: 13px;
 }
 
@@ -364,12 +827,16 @@
   background: var(--line);
 }
 
+/* Подписи годов — заметнее и в стиле остальной типографики сайта (тот же
+   вес/цвет, что у мета-строк карточки), не блёклый технический серый
+   (см. правку 13, пункт 2). */
 .timeline-tick {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  font-size: 10px;
-  color: var(--ink-faint);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--explore-text-soft);
 }
 
 .timeline-tick::after {
@@ -378,8 +845,8 @@
   width: 1px;
   height: 150px;
   background: var(--line);
-  opacity: 0.5;
-  margin: 2px auto 0;
+  opacity: 0.6;
+  margin: 3px auto 0;
 }
 
 .timeline-node {
@@ -393,42 +860,647 @@
   align-items: center;
 }
 
+/* Кружок — тот же медальон-стиль, что у маркеров на карте (цвет ветки +
+   золотая обводка), а не нейтральный "бегунок слайдера" (см. правку 7.1,
+   пункт 1). */
 .timeline-node-dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: var(--chip-color, var(--gold));
-  border: 1.5px solid var(--navy);
+  border: 2px solid var(--gold);
   display: block;
   position: relative;
   z-index: 1;
 }
 
+/* Tooltip точки шкалы (правка 25, пункт 1) — тот же визуальный язык, что и
+   .flatmap-marker-tooltip на карте. position: fixed и координаты из
+   getBoundingClientRect (см. Timeline.jsx) — намеренно, а не position:
+   absolute относительно .timeline-node: родительская .app-timeline имеет
+   overflow-y: hidden (нужен, чтобы избежать второго вертикального
+   скроллбара при overflow-x: auto — см. правку 24), и обычный absolute
+   tooltip над точками верхнего ряда обрезался бы этой границей. Fixed
+   позиционирование не подчиняется overflow предков. */
+.timeline-node-tooltip {
+  position: fixed;
+  transform: translate(-50%, calc(-100% - 10px));
+  z-index: 20;
+  width: max-content;
+  max-width: 220px;
+  box-sizing: border-box;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 6px 9px;
+  text-align: center;
+  line-height: 1.35;
+  pointer-events: none;
+}
+
+.timeline-node-tooltip-date {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pl-ivory);
+  white-space: nowrap;
+}
+
+.timeline-node-tooltip-event {
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: rgba(247, 242, 232, 0.75);
+}
+
+.timeline-node-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid var(--gold);
+}
+
+.timeline-node-tooltip::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: -5.5px;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--navy);
+}
+
+/* Тонкая линия в Gold Accent вместо серой "полосы прогресса" — интервал
+   неточной даты читается как аккуратная засечка на шкале, а не как
+   нативный HTML range-трек. */
 .timeline-node-bar {
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
-  height: 4px;
+  height: 2px;
   transform: translateY(-50%);
-  background: var(--chip-color, var(--gold));
-  opacity: 0.35;
-  border-radius: 2px;
+  background: var(--gold);
+  opacity: 0.55;
+  border-radius: 1px;
 }
 
+/* Активный узел — заметно крупнее и с золотым свечением, чтобы было видно
+   с первого взгляда на шкалу, какой узел выбран (см. правку 13, пункт 2). */
 .timeline-node--active .timeline-node-dot {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 4px rgba(201, 151, 43, 0.4), 0 0 10px 2px rgba(201, 151, 43, 0.55);
+}
+
+.timeline-node--active .timeline-node-bar {
+  opacity: 0.9;
+}
+
+/* ---- flat stylized map ---- */
+.flatmap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Journey Mode: тёплый фон в летербоксе SVG (там, где preserveAspectRatio
+   оставляет пустые поля). Правка 23: раньше здесь был ещё radial-gradient +
+   inset box-shadow — оба статичны относительно контейнера (в отличие от
+   самой карты, которая живёт внутри <g transform=...> и двигается при
+   пане/зуме), из-за чего при панорамировании получались неподвижные полосы
+   по краям поверх уезжающей карты ("окошко со шторками"). Убраны полностью.
+   Explore Mode (.flatmap без модификатора) не меняется. */
+.flatmap--journey-atlas {
+  background: var(--pl-paper);
+}
+
+.flatmap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: grab;
+}
+
+.flatmap-svg:active {
+  cursor: grabbing;
+}
+
+/* Explore Mode: тёмная вода вместо светлой бумаги (правка 31) — эти базовые
+   (без --journey) классы применяются только в Explore Mode по построению
+   (см. isJourney-ветку в MapView.jsx), поэтому Journey не затронут и без
+   scoping через .app-shell[data-mode]. */
+.flatmap-bg {
+  fill: var(--ink);
+}
+
+/* Правка 23: раньше здесь был radial-gradient (#journeyPaperBg) — этот
+   <rect> рисуется вне трансформируемой <g> (нужен как статичный фон под
+   letterbox-полями preserveAspectRatio), поэтому неоднородный градиент
+   оставался неподвижным на экране, пока суша уезжала при пане/зуме
+   ("окошко со шторками"). Заменён на плоский цвет. */
+.flatmap-bg--journey {
+  fill: var(--pl-paper);
+}
+
+.flatmap-grain {
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Explore Mode: тёплая тёмно-коричневая суша (не холодный серый) на тёмной
+   воде — аналитический, но не техничный вид (правка 31). Раньше здесь был
+   градиент (url(#landShade)) для светлой "музейной" темы; теперь плоский
+   тёмный цвет, bevel-фильтр (специальное освещение кромки берега) и
+   drop-shadow оставлены — они работают поверх любой заливки. */
+.flatmap-land {
+  fill: var(--explore-land);
+  stroke: var(--explore-coast);
+  stroke-width: 1;
+  filter: url(#landBevel) drop-shadow(2px 4px 3px rgba(2, 11, 24, 0.4));
+}
+
+/* Journey Mode: более глубокие/насыщенные тона суши + мягкий песочный
+   контур вместо тёмно-синего — премиальная музейная палитра вместо
+   рабочей плоской (см. "карта должна выглядеть богаче"). */
+.flatmap-land--journey {
+  fill: url(#journeyLandShade);
+  stroke: rgba(120, 88, 46, 0.4);
+  stroke-width: 1.1;
+  filter: url(#landBevel) drop-shadow(3px 6px 8px rgba(58, 36, 9, 0.28));
+}
+
+/* ---- маршрут: путь по историческому атласу, не схема связей (правка 15) ---- */
+.flatmap-route {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.25s ease, stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+/* Пройденный участок — тёмно-синий "след" от узла 1 до текущего активного
+   узла включительно (правка 29, пункт 1; правка 30 — сегмент, ведущий ОТ
+   активного узла к следующему, сюда больше не входит, см. routeSegments в
+   MapView.jsx: он ещё не пройден, поэтому остаётся --future). */
+.flatmap-route--completed {
+  stroke: #1a3a5c;
+  stroke-width: 2.5px;
+  opacity: 1;
+}
+
+/* Ещё не пройденные сегменты — приглушённый тёплый бронзово-серый, читается
+   как "то, что впереди", а не просто более бледное золото. */
+.flatmap-route--future {
+  stroke: rgba(130, 110, 70, 0.3);
+  stroke-width: 1.5px;
+}
+
+.flatmap-marker {
+  cursor: pointer;
+}
+
+.flatmap-marker:hover {
+  filter: drop-shadow(0 0 3px rgba(2, 11, 24, 0.45));
+}
+
+.flatmap-marker--active {
+  filter: drop-shadow(0 0 0 2px var(--gold)) drop-shadow(0 0 4px rgba(201, 151, 43, 0.7));
+}
+
+/* Tooltip над маркером Explore Mode (правка 25, пункт 1). Виден по hover
+   (desktop) и когда маркер выбран кликом (для тач-устройств без hover) —
+   скрывается при выборе другого маркера или клике по пустому месту карты
+   (см. handleBackgroundClick в MapView.jsx).
+   position: fixed, рендерится один раз вне SVG, а не foreignObject'ом внутри
+   каждой группы маркера (см. правку 26) — при плотных скоплениях соседний
+   маркер, идущий позже в DOM, перекрывал tooltip сверху (порядок отрисовки в
+   SVG определяется DOM-порядком, не z-index), плюс у края карты его обрезал
+   overflow:hidden контейнера .app-map. Тот же приём, что и для точек
+   временной шкалы, см. .timeline-node-tooltip и Timeline.jsx. */
+.flatmap-marker-tooltip {
+  position: fixed;
+  transform: translate(-50%, calc(-100% - 10px));
+  z-index: 20;
+  width: max-content;
+  max-width: 220px;
+  box-sizing: border-box;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 6px 9px;
+  text-align: center;
+  line-height: 1.35;
+  font-family: var(--font-body);
+  pointer-events: none;
+}
+
+.flatmap-marker-tooltip-code {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pl-ivory);
+  white-space: nowrap;
+}
+
+.flatmap-marker-tooltip-event {
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: rgba(247, 242, 232, 0.75);
+}
+
+/* Стрелка вниз, указывающая на маркер — золотой треугольник побольше снизу
+   + тёмный поменьше сверху него создают эффект тонкой золотой обводки. */
+.flatmap-marker-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid var(--gold);
+}
+
+.flatmap-marker-tooltip::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: -5.5px;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--navy);
+}
+
+/* ---- маршрут: единый премиальный медальон станции (см. правки 6, 16) ----
+   Редакционный стиль вместо "технического": тёмно-навигационная заливка +
+   золотая/бронзовая обводка (единая для всех 6 станций, без привязки к
+   цвету ветки — та идентификация уже есть в карточке справа), активный
+   маркер крупнее и с мягким золотым свечением. */
+.flatmap-waypoint {
+  cursor: pointer;
+}
+
+.flatmap-waypoint-medallion {
+  fill: var(--pl-bg-dark);
+  stroke: color-mix(in srgb, var(--pl-gold) 90%, transparent);
+  stroke-width: 2;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.28));
+  transition: transform 0.2s ease, stroke-width 0.2s ease, filter 0.2s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.flatmap-waypoint:hover .flatmap-waypoint-medallion {
+  transform: scale(1.08);
+}
+
+.flatmap-waypoint-number {
+  fill: #f5e8c8;
+  font-weight: 700;
+  font-size: 13px;
+  text-anchor: middle;
+  transition: fill 0.2s ease;
+}
+
+.flatmap-waypoint--active .flatmap-waypoint-medallion {
+  transform: scale(1.16);
+  fill: var(--pl-gold);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 3px rgba(215, 163, 41, 0.65)) drop-shadow(0 0 11px rgba(215, 163, 41, 0.45));
+}
+
+.flatmap-waypoint--active .flatmap-waypoint-number {
+  fill: var(--pl-bg-dark);
+}
+
+.flatmap-waypoint-tooltip {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.flatmap-waypoint:hover .flatmap-waypoint-tooltip {
+  opacity: 1;
+}
+
+.flatmap-waypoint-tooltip rect {
+  fill: var(--pl-bg-dark);
+}
+
+.flatmap-waypoint-tooltip text {
+  fill: var(--pl-ivory);
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* Тонкая линия-выноска от совпадающих координат (напр. три узла в Лондоне)
+   к разнесённому веером медальону — см. правку 6, пункт 1. */
+.flatmap-waypoint-leader {
+  stroke: rgba(2, 11, 24, 0.4);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+.flatmap-cluster {
+  cursor: pointer;
+}
+
+.flatmap-cluster circle {
+  fill: var(--navy);
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.flatmap-cluster text {
+  fill: var(--paper);
+  font-weight: 700;
+  font-size: 12px;
+  text-anchor: middle;
+}
+
+.flatmap-cluster:hover circle {
+  stroke-width: 3;
+}
+
+.flatmap-controls {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flatmap-controls button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.flatmap-controls button:hover {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201, 151, 43, 0.35);
+  color: var(--gold);
 }
 
-/* ---- globe marker icons ---- */
-/* Positioning (incl. centering) is applied inline by three's CSS2DRenderer. */
-.globe-marker {
-  cursor: pointer;
-  filter: drop-shadow(0 0 3px rgba(2, 11, 24, 0.55));
+/* ==========================================================================
+   Мобильная адаптация Journey Mode (правка 33). Explore Mode, десктопный
+   layout (≥769px) и данные/логика не трогаются — все правила ниже scoped
+   через .app-shell[data-mode="journey"] внутри самого media query.
+   ==========================================================================
+   Три зоны сверху вниз: карта (~55% оставшейся высоты) → лента шагов →
+   карточка (~45% оставшейся высоты). В разметке порядок другой (map+side
+   лежат внутри .app-main, а .app-timeline — их следующий сосед), поэтому
+   .app-main переводится в display:contents ("растворяется"), и его дети
+   (.app-map/.app-side) наравне с .app-timeline становятся прямыми участниками
+   grid-раскладки .app-shell — так их можно расставить в любом визуальном
+   порядке через grid-template-areas независимо от DOM-порядка. */
+@media (max-width: 768px) {
+  .app-shell[data-mode="journey"] {
+    display: grid;
+    grid-template-rows: auto minmax(0, 55fr) auto minmax(0, 45fr);
+    grid-template-areas: "header" "map" "steps" "card";
+    height: 100vh;
+  }
+
+  /* Правка 34, п.1: бренд-строка и заголовок убраны целиком, а не просто
+     уменьшены — на 375px им всё равно не хватает места рядом с
+     переключателем режимов, и текст переносится на 2-3 строки, раздувая
+     шапку до ~116px вместо целевых 44px. Карта и так объясняет себя. */
+  .app-shell[data-mode="journey"] .app-header {
+    grid-area: header;
+    padding: 6px 14px;
+    min-height: 44px;
+    max-height: 44px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .app-shell[data-mode="journey"] .app-header-title {
+    display: none;
+  }
+
+  .app-shell[data-mode="journey"] .app-header-meta {
+    display: none;
+  }
+
+  .app-shell[data-mode="journey"] .app-main {
+    display: contents;
+  }
+
+  .app-shell[data-mode="journey"] .app-map {
+    grid-area: map;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Кнопки +/− зума убраны — на тач-устройстве достаточно pinch-жеста,
+     а кнопки только отнимают место на маленьком экране. */
+  .app-shell[data-mode="journey"] .flatmap-controls {
+    display: none;
+  }
+
+  .app-shell[data-mode="journey"] .app-timeline {
+    grid-area: steps;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .app-shell[data-mode="journey"] .journey-steps {
+    height: auto;
+    padding: 0 12px;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Компактные карточки шагов ~108px — на экране 390px видно 3-4 штуки
+     сразу, остальное угадывается по обрезанной карточке справа (см. п.2). */
+  .app-shell[data-mode="journey"] .journey-step {
+    flex: 0 0 auto;
+    width: 108px;
+    min-width: 108px;
+    scroll-snap-align: center;
+  }
+
+  .app-shell[data-mode="journey"] .app-side {
+    grid-area: card;
+    width: 100%;
+    height: 100%;
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding: 0 16px;
+    overflow-y: auto;
+  }
+
+  .app-shell[data-mode="journey"] .node-card--journey {
+    padding: 18px 0 20px;
+  }
+
+  .app-shell[data-mode="journey"] .node-card-journey-headline {
+    font-size: 19px;
+    margin-bottom: 16px;
+  }
+
+  .app-shell[data-mode="journey"] .node-card-journey-block p {
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  /* Правка 35: фиксированная тёмная полоса из правки 34 визуально не
+     вписалась в тёплый стиль Journey Mode — убрана. Кнопки prev/next снова
+     внутри карточки, но sticky: при скролле карточки вниз они "прилипают"
+     к низу видимой области (той же .app-side, что и is scroll-контейнер),
+     а не уезжают за экран вместе с остальным контентом. */
+  .app-shell[data-mode="journey"] .node-card-journey-nav {
+    position: sticky;
+    bottom: 0;
+    margin: 16px -16px 0;
+    padding: 12px 16px;
+    background: var(--pl-ivory);
+    border-top: 1px solid var(--line);
+  }
 }
 
-.globe-cluster {
-  cursor: pointer;
-  box-shadow: 0 0 6px rgba(2, 11, 24, 0.35);
+/* ==========================================================================
+   Мобильная адаптация Explore Mode (правка 36). Десктоп (≥769px), Journey
+   Mode на любой ширине и тёмная тема карты — не трогаются; всё ниже scoped
+   через .app-shell[data-mode="explore"] внутри media query.
+   ==========================================================================
+   В отличие от Journey Mode (правка 33) здесь НЕ используется grid на
+   фиксированные 100vh — .app-shell просто переходит в обычный вертикальный
+   flex-поток (header → filters-bar → карта 50vh → панель по контенту →
+   шкала 120px), и страница целиком скроллится браузером. Именно фиксация
+   .app-shell на 100vh при коротком контенте панели (пустая карточка "выберите
+   узел") была причиной пустого белого пространства под шкалой — весь этот
+   flex:1 расход высоты доставался узкой, но очень высокой .app-side. */
+@media (max-width: 768px) {
+  .app-shell[data-mode="explore"] {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* П.1: заголовок убран, бренд-строка остаётся мелкой, переключатель —
+     единственный крупный элемент шапки, высота ≤44px. */
+  .app-shell[data-mode="explore"] .app-header {
+    padding: 6px 14px;
+    min-height: 44px;
+    max-height: 44px;
+    align-items: center;
+  }
+
+  .app-shell[data-mode="explore"] .app-header h1 {
+    display: none;
+  }
+
+  .app-shell[data-mode="explore"] .app-header-eyebrow {
+    font-size: 9px;
+    margin-bottom: 0;
+  }
+
+  /* Счётчик узлов из шапки убран — эквивалентный счётчик уже есть в строке
+     фильтров (.filters-count), дублировать его отдельной строкой не нужно. */
+  .app-shell[data-mode="explore"] .app-header-meta {
+    display: none;
+  }
+
+  .app-shell[data-mode="explore"] .filters-panel {
+    padding: 8px 14px;
+  }
+
+  /* П.2: карта на всю ширину, фиксированная ~50vh (не flex:1 — иначе высота
+     будет зависеть от соседей, как в баге выше). */
+  .app-shell[data-mode="explore"] .app-main {
+    flex-direction: column;
+  }
+
+  .app-shell[data-mode="explore"] .app-map {
+    width: 100%;
+    height: 50vh;
+    flex: none;
+    margin: 0;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  /* П.3: панель под картой, на всю ширину, высота по контенту; max-height +
+     overflow-y — защита от того, что очень длинная карточка узла или список
+     "глобальных процессов" отодвинет шкалу времени за пределы разумной
+     прокрутки перед ней. */
+  .app-shell[data-mode="explore"] .app-side {
+    width: 100%;
+    flex: none;
+    border-left: none;
+    border-top: 1px solid var(--explore-coast);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  /* П.4: шкала времени под панелью, на всю ширину, фиксированная высота
+     (меньше, чем на десктопе — там 170px рассчитаны на боковую раскладку). */
+  .app-shell[data-mode="explore"] .app-timeline {
+    width: 100%;
+    height: 120px;
+    flex: none;
+  }
+
+  /* Фильтры: не горизонтальная строка на 375px (не влезет), а bottom sheet —
+     выезжает снизу поверх интерфейса, с полупрозрачной подложкой для тапа
+     "закрыть мимо". Тот же .filters-body/.expanded, что и на десктопе —
+     меняется только CSS-презентация, логика фильтрации не трогается. */
+  .app-shell[data-mode="explore"] .filters-body {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    max-height: 75vh;
+    margin: 0;
+    padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+    background: var(--paper);
+    border-top: 2px solid var(--gold);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -8px 24px rgba(2, 11, 24, 0.35);
+    overflow-y: auto;
+  }
+
+  .app-shell[data-mode="explore"] .filters-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .app-shell[data-mode="explore"] .filter-field select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .app-shell[data-mode="explore"] .filters-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 49;
+    background: rgba(2, 11, 24, 0.45);
+  }
+}
+
+.filters-backdrop {
+  display: none;
 }

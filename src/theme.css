@@ -16,6 +16,27 @@
 
   --radius: 10px;
   --radius-sm: 6px;
+
+  /* Journey Mode palette (правка 21) — усиленный, более "музейный" вариант
+     той же тёмно-синей/золотой темы; шапка и общий --gold/--navy не трогаем. */
+  --pl-bg-dark: #070d18;
+  --pl-gold: #d7a329;
+  --pl-gold-soft: rgba(215, 163, 41, 0.18);
+  --pl-ivory: #f7f2e8;
+  --pl-paper: #efe2bf;
+  --pl-ink: #111827;
+  --pl-muted: #6b7280;
+
+  /* Explore Mode — тёмная аналитическая тема (правка 31), в отличие от
+     светлого тёплого атласа Journey Mode. Большая часть палитры уже есть
+     выше (--navy, --ink, --paper, --line, --gold) — этих трёх новых цветов
+     раньше не было: тёплая тёмно-коричневая суша на карте (не холодный
+     серый), кромка берега чуть светлее суши, и приглушённый вторичный текст
+     для тёмных фонов (--ink-soft/--ink-faint замешаны на --ink и слишком
+     тёмные, чтобы читаться на нём же). */
+  --explore-land: #2a2218;
+  --explore-coast: #4a3e2e;
+  --explore-text-soft: #9e9a93;
 }
 
 * {
@@ -59,25 +80,3 @@ a {
   color: var(--navy);
 }
 
-/* Leaflet cluster styling, brand-aligned */
-.plm-cluster-icon {
-  background: var(--navy);
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  color: var(--paper);
-  font-weight: 700;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.leaflet-popup-content-wrapper {
-  background: var(--paper);
-  color: var(--ink);
-  border-radius: var(--radius-sm);
-}
-
-.leaflet-popup-tip {
-  background: var(--paper);
-}

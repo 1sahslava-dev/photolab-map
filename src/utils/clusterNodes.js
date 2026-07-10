@@ -1,45 +1,39 @@
-// Простая grid-кластеризация точек на глобусе. Размер ячейки зависит от
-// текущей высоты камеры (altitude) — чем ближе камера, тем мельче ячейка,
-// поэтому при приближении кластеры сами рассыпаются на отдельные узлы.
-function cellSizeForAltitude(altitude) {
-  const deg = altitude * 4;
-  return Math.min(14, Math.max(0.8, deg));
+// Простая grid-кластеризация уже спроецированных точек (x/y в пикселях
+// viewBox карты). Размер ячейки зависит от текущего масштаба (scale) —
+// чем ближе зум, тем мельче ячейка в мировых координатах, поэтому при
+// приближении кластеры сами рассыпаются на отдельные узлы.
+function cellSizeForScale(scale) {
+  const px = 70 / scale;
+  return Math.min(70, Math.max(4, px));
 }
 
-export function clusterNodes(nodes, altitude) {
-  const cell = cellSizeForAltitude(altitude);
+export function clusterNodes(points, scale) {
+  const cell = cellSizeForScale(scale);
   const buckets = new Map();
 
-  for (const node of nodes) {
-    const { lat, lon } = node.coordinates;
-    const key = `${Math.floor(lat / cell)}:${Math.floor(lon / cell)}`;
+  for (const point of points) {
+    const key = `${Math.floor(point.x / cell)}:${Math.floor(point.y / cell)}`;
     if (!buckets.has(key)) buckets.set(key, []);
-    buckets.get(key).push(node);
+    buckets.get(key).push(point);
   }
 
-  const points = [];
-  for (const bucketNodes of buckets.values()) {
-    if (bucketNodes.length === 1) {
-      const node = bucketNodes[0];
-      points.push({
-        isCluster: false,
-        id: node.id,
-        lat: node.coordinates.lat,
-        lng: node.coordinates.lon,
-        node,
-      });
+  const result = [];
+  for (const bucket of buckets.values()) {
+    if (bucket.length === 1) {
+      const { node, x, y } = bucket[0];
+      result.push({ isCluster: false, id: node.id, x, y, node });
     } else {
-      const lat = bucketNodes.reduce((s, n) => s + n.coordinates.lat, 0) / bucketNodes.length;
-      const lng = bucketNodes.reduce((s, n) => s + n.coordinates.lon, 0) / bucketNodes.length;
-      points.push({
+      const x = bucket.reduce((s, p) => s + p.x, 0) / bucket.length;
+      const y = bucket.reduce((s, p) => s + p.y, 0) / bucket.length;
+      result.push({
         isCluster: true,
-        id: `cluster:${lat.toFixed(2)}:${lng.toFixed(2)}:${bucketNodes.length}`,
-        lat,
-        lng,
-        count: bucketNodes.length,
-        childNodes: bucketNodes,
+        id: `cluster:${x.toFixed(1)}:${y.toFixed(1)}:${bucket.length}`,
+        x,
+        y,
+        count: bucket.length,
+        childNodes: bucket.map((p) => p.node),
       });
     }
   }
-  return points;
+  return result;
 }
