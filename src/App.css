@@ -274,7 +274,7 @@
 }
 
 .app-shell[data-mode="explore"] .app-map {
-  background: var(--ink);
+  background: var(--explore-ocean);
   border-color: var(--explore-coast);
 }
 
@@ -995,7 +995,7 @@
    (см. isJourney-ветку в MapView.jsx), поэтому Journey не затронут и без
    scoping через .app-shell[data-mode]. */
 .flatmap-bg {
-  fill: var(--ink);
+  fill: var(--explore-ocean);
 }
 
 /* Правка 23: раньше здесь был radial-gradient (#journeyPaperBg) — этот
