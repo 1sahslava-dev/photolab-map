@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T05:32:21.438112+00:00",
+  "generatedAt": "2026-07-10T11:39:59.990507+00:00",
   "sourceFile": "master.xlsx",
   "branches": [
     {
@@ -417,7 +417,7 @@
       "nodesNarrative": "PL-HIST-0001…0008, 0013, 0028",
       "whatToUnderstand": "Свет умеет строить изображение, но ещё не сохраняет его.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf/39"
     },
     {
       "id": "PL-002",
@@ -425,7 +425,7 @@
       "nodesNarrative": "PL-HIST-0009…0016",
       "whatToUnderstand": "Недостаточно увидеть изображение — его нужно зафиксировать.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf/45"
     },
     {
       "id": "PL-003",
@@ -433,7 +433,7 @@
       "nodesNarrative": "PL-HIST-0017…0023, 0027",
       "whatToUnderstand": "Фотография стала публичной, резкой и убедительной, но изображение было уникальным.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf/50"
     },
     {
       "id": "PL-004",
