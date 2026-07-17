@@ -40,6 +40,12 @@ BRANCH_COLORS = {
 COORD_RE = re.compile(r"^\s*(-?\d+(?:[.,]\d+)?)\s*,\s*(-?\d+(?:[.,]\d+)?)\s*$")
 YEAR_RE = re.compile(r"(\d{4})(-?[еxх])?")
 
+# Курс рассчитан на 100 уроков (правка 40, было — жёсткий диапазон PL-001–007).
+# Проверяем только уроки, которые реально есть в данных, а не все 100 заранее —
+# иначе на каждый ещё не написанный урок сыпался бы ложный warning.
+MAX_LESSON_NUMBER = 100
+LESSON_ID_RE = re.compile(r"^PL-(\d{3})$")
+
 
 def parse_coords(raw):
     if not raw:
@@ -221,23 +227,38 @@ def convert(input_path: Path):
 
     # Journey Mode строит маршрут строго из этих узлов — если разметка в xlsx
     # неполная, лучше сообщить сразу, а не молча показать неполный/пустой маршрут.
+    # Правка 40: курс расширен до 100 уроков, но проверяем и включаем в маршрут
+    # только уроки, которые реально присутствуют среди флагманов на данный
+    # момент (не все 100 наперёд — большинство ещё не написаны).
     flagship_nodes = [n for n in nodes if n["flagship"]]
     flagship_by_lesson = {}
     for n in flagship_nodes:
         flagship_by_lesson.setdefault(n["lessonLink"], []).append(n["id"])
-    expected_lessons = [f"PL-{i:03d}" for i in range(1, 8)]
-    for lesson in expected_lessons:
-        ids = flagship_by_lesson.get(lesson, [])
+
+    present_lessons = sorted(
+        lesson for lesson in flagship_by_lesson if LESSON_ID_RE.match(lesson or "")
+    )
+    for lesson in present_lessons:
+        num = int(LESSON_ID_RE.match(lesson).group(1))
+        if num > MAX_LESSON_NUMBER:
+            print(
+                f"ВНИМАНИЕ: {lesson} превышает ожидаемый максимум PL-{MAX_LESSON_NUMBER:03d}",
+                file=sys.stderr,
+            )
+        ids = flagship_by_lesson[lesson]
         if len(ids) != 1:
             print(
                 f"ВНИМАНИЕ: для {lesson} найдено {len(ids)} узлов с «Флагман урока» = да "
                 f"(ожидался ровно 1): {ids}",
                 file=sys.stderr,
             )
-    stray_lessons = set(flagship_by_lesson) - set(expected_lessons)
+    stray_lessons = {
+        lesson for lesson in flagship_by_lesson if not LESSON_ID_RE.match(lesson or "")
+    }
     if stray_lessons:
         print(
-            f"ВНИМАНИЕ: флагманские узлы с неожиданной привязкой к уроку: {stray_lessons}",
+            f"ВНИМАНИЕ: флагманские узлы с неожиданной/некорректной привязкой к уроку "
+            f"(ожидался формат PL-XXX): {stray_lessons}",
             file=sys.stderr,
         )
 
@@ -257,9 +278,7 @@ def convert(input_path: Path):
         "filters": filters,
         "nodes": nodes,
         "journeyNodeIds": [
-            flagship_by_lesson[lesson][0]
-            for lesson in expected_lessons
-            if flagship_by_lesson.get(lesson)
+            flagship_by_lesson[lesson][0] for lesson in present_lessons
         ],
         "nodesWithoutCoordinates": [n["id"] for n in nodes if n["coordinates"] is None],
     }

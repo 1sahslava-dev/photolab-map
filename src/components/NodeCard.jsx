@@ -99,8 +99,12 @@ function TelegramLink({ url }) {
 
 // Короткий редакционный заголовок шага — не длинное техническое "событие"
 // из базы (node.event), а самостоятельная, отдельно составленная строка
-// (см. правку 19). Дан явно только для PL-001, дальше по тому же шаблону
-// "Тема: суть перемены" — проверить/поправить формулировки для PL-002..007.
+// (см. правку 19). Дан явно только для PL-001..007, дальше по тому же
+// шаблону "Тема: суть перемены" — можно добавлять сюда по мере написания
+// уроков. Курс рассчитан на 100 уроков (правка 40): для PL-008 и дальше,
+// пока явной редакционной строки нет, заголовком становится «Главная тема»
+// урока прямо из master.xlsx (lessonTopic, см. App.jsx/lessonsById), и
+// только если её тоже нет — сырое node.event.
 const JOURNEY_HEADLINES = {
   "PL-001": "Камера-обскура: свет впервые объясняет изображение",
   "PL-002": "Ньепс: первое сохранившееся изображение в истории",
@@ -111,8 +115,8 @@ const JOURNEY_HEADLINES = {
   "PL-007": "Kodak: нажми на кнопку — остальное сделаем мы",
 };
 
-function JourneyCard({ node, journeyStep, telegramUrl }) {
-  const headline = JOURNEY_HEADLINES[node.lessonLink] || node.event;
+function JourneyCard({ node, journeyStep, telegramUrl, lessonTopic }) {
+  const headline = JOURNEY_HEADLINES[node.lessonLink] || lessonTopic || node.event;
   const metaParts = [
     node.lessonLink && <span key="lesson" className="node-card-journey-lesson">{node.lessonLink}</span>,
     node.person && <span key="person">{node.person}</span>,
@@ -170,7 +174,7 @@ function JourneyCard({ node, journeyStep, telegramUrl }) {
   );
 }
 
-export default function NodeCard({ node, onClose, journeyStep, telegramUrl }) {
+export default function NodeCard({ node, onClose, journeyStep, telegramUrl, lessonTopic }) {
   if (!node) {
     return (
       <div className="node-card node-card--empty">
@@ -180,7 +184,7 @@ export default function NodeCard({ node, onClose, journeyStep, telegramUrl }) {
   }
 
   if (journeyStep) {
-    return <JourneyCard node={node} journeyStep={journeyStep} telegramUrl={telegramUrl} />;
+    return <JourneyCard node={node} journeyStep={journeyStep} telegramUrl={telegramUrl} lessonTopic={lessonTopic} />;
   }
 
   const flagged = Boolean(node.checkLater) || (node.confidence && node.confidence <= 2);

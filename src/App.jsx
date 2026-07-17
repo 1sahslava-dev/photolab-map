@@ -150,6 +150,7 @@ export default function App() {
               node={journeySelectedNode}
               journeyStep={journeyStep}
               telegramUrl={lessonsById.get(journeySelectedNode?.lessonLink)?.telegramUrl}
+              lessonTopic={lessonsById.get(journeySelectedNode?.lessonLink)?.topic}
             />
           ) : activeCluster ? (
             <ClusterList cluster={activeCluster} onSelectNode={handleSelectNode} onClose={() => setActiveCluster(null)} />
@@ -168,7 +169,12 @@ export default function App() {
 
       <section className="app-timeline" ref={timelineRef}>
         {mode === "journey" ? (
-          <JourneySteps nodes={journeyNodes} onSelectNode={setJourneySelectedId} selectedNodeId={journeySelectedId} />
+          <JourneySteps
+            nodes={journeyNodes}
+            onSelectNode={setJourneySelectedId}
+            selectedNodeId={journeySelectedId}
+            lessons={data.lessons}
+          />
         ) : (
           <Timeline
             nodes={filteredNodes}
