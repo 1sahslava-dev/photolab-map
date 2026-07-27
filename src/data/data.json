@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T03:39:44.614357+00:00",
+  "generatedAt": "2026-07-27T22:56:35.818297+00:00",
   "sourceFile": "master.xlsx",
   "branches": [
     {
@@ -473,7 +473,7 @@
       "nodesNarrative": "PL-HIST-0001…0008, 0013, 0028",
       "whatToUnderstand": "Свет умеет строить изображение, но ещё не сохраняет его.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf/39"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/40"
     },
     {
       "id": "PL-002",
@@ -481,7 +481,7 @@
       "nodesNarrative": "PL-HIST-0009…0016",
       "whatToUnderstand": "Недостаточно увидеть изображение — его нужно зафиксировать.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf/45"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/54"
     },
     {
       "id": "PL-003",
@@ -489,7 +489,7 @@
       "nodesNarrative": "PL-HIST-0017…0023, 0027",
       "whatToUnderstand": "Фотография стала публичной, резкой и убедительной, но изображение было уникальным.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf/50"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/59"
     },
     {
       "id": "PL-004",
@@ -497,7 +497,7 @@
       "nodesNarrative": "PL-HIST-0019…0026, 0029…0035",
       "whatToUnderstand": "Идея копирования победила: один негатив может дать много отпечатков.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf/55"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/64"
     },
     {
       "id": "PL-005",
@@ -505,7 +505,7 @@
       "nodesNarrative": "PL-HIST-0041…0048",
       "whatToUnderstand": "Резкость дагеротипа и тираж калотипа встретились на стеклянной влажной пластине.",
       "status": "основа готова",
-      "telegramUrl": "https://t.me/photolab_vf/60"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/69"
     },
     {
       "id": "PL-006",
@@ -513,7 +513,7 @@
       "nodesNarrative": "PL-HIST-0049…0058",
       "whatToUnderstand": "Фотография освобождается от немедленной полевой химии: пластину можно купить, хранить, экспонировать и проявлять позже.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf/65"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/75"
     },
     {
       "id": "PL-007",
@@ -521,7 +521,7 @@
       "nodesNarrative": "PL-HIST-0059…0068",
       "whatToUnderstand": "Фотография освобождается от стеклянной пластины: рулонный носитель, Kodak и сервис обработки делают съёмку проще и ближе к массовому пользователю.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/80"
     },
     {
       "id": "PL-008",
