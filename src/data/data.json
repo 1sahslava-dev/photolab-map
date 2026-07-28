@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T22:56:35.818297+00:00",
+  "generatedAt": "2026-07-28T04:46:08.764209+00:00",
   "sourceFile": "master.xlsx",
   "branches": [
     {
@@ -12,8 +12,8 @@
     },
     {
       "name": "Оптические инструменты",
-      "includes": "camera lucida, stereoscope, portable camera obscura",
-      "lessons": "PL-001 / будущие PL",
+      "includes": "camera lucida, stereoscope, portable camera obscura, compact 35mm cameras, Leica system",
+      "lessons": "PL-001 / PL-009 / PL-010 / будущие PL",
       "colorName": "голубой",
       "colorHex": "#009ca5",
       "comment": "Помогает объяснить, что люди стремились к точному изображению до химии."
@@ -52,8 +52,8 @@
     },
     {
       "name": "Негатив-позитив",
-      "includes": "бумажный негатив, калотип, стеклянный негатив, сухая желатиновая пластина, рулонная плёнка, Brownie, 120 film, копирование",
-      "lessons": "PL-004 / PL-006 / PL-007 / PL-008",
+      "includes": "бумажный негатив, калотип, стеклянный негатив, сухая желатиновая пластина, рулонная плёнка, Brownie, 120 film, 35 мм, 24×36, 135 cartridge, копирование",
+      "lessons": "PL-004 / PL-006 / PL-007 / PL-008 / PL-009",
       "colorName": "зелёный тёмный",
       "colorHex": "#00724c",
       "comment": "Главная идея, которая победила исторически."
@@ -92,8 +92,8 @@
     },
     {
       "name": "Цвет",
-      "includes": "ранние опыты, Becquerel, будущий Autochrome",
-      "lessons": "будущие PL",
+      "includes": "lantern slides, публичный показ, киноплёнка, Kinetoscope, 35-мм киноформат",
+      "lessons": "PL-009 / будущие PL",
       "colorName": "радужный",
       "colorHex": "#ae539d",
       "comment": "В v0.1 только ранний ориентир."
@@ -464,6 +464,76 @@
       "url": "https://americanhistory.si.edu/collections/object/nmah_834692",
       "usedFor": "Leica 1(A), commercial 35mm camera, Barnack, 1924/1925 and popularization of 35mm film photography",
       "note": "музейная карточка предмета"
+    },
+    "SRC-052": {
+      "id": "SRC-052",
+      "name": "Kodak — Motion Picture History",
+      "url": "https://www.kodak.com/en/company/page/motion-picture-history/",
+      "usedFor": "Eastman transparent roll film in 1889 enabled Edison to develop the first motion picture camera in 1891",
+      "note": "официальная история компании"
+    },
+    "SRC-053": {
+      "id": "SRC-053",
+      "name": "Library of Congress — Origins of Motion Pictures",
+      "url": "https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/history-of-edison-motion-pictures/origins-of-motion-pictures/",
+      "usedFor": "Edison/Dickson motion picture work; Eastman celluloid film; patent width specified as 35mm",
+      "note": "архив / библиотека"
+    },
+    "SRC-054": {
+      "id": "SRC-054",
+      "name": "George Eastman Museum — Early Kodak transparent film",
+      "url": "https://www.eastman.org/two-rare-rolls-early-kodak-film-acquired-george-eastman-museum",
+      "usedFor": "Kodak Transparent Film, 70mm slit in half to 35mm and perforated for Edison Kinetoscope",
+      "note": "музейный источник"
+    },
+    "SRC-055": {
+      "id": "SRC-055",
+      "name": "George Eastman Museum — Kinetoscope",
+      "url": "https://collections.eastman.org/objects/78087/kinetoscope",
+      "usedFor": "Kinetoscope object with double-perforated 35mm film and Dickson/Edison context",
+      "note": "музейная карточка предмета"
+    },
+    "SRC-056": {
+      "id": "SRC-056",
+      "name": "SMPTE Journal — The Origins of 35mm Film as a Standard",
+      "url": "https://journal.smpte.org/periodicals/SMPTE%20Journal/99/8/22/",
+      "usedFor": "Origins of 35mm film as production and exhibition standard; 1908–1909 context",
+      "note": "профильный историко-технический источник"
+    },
+    "SRC-057": {
+      "id": "SRC-057",
+      "name": "Leica Timeline — 1914",
+      "url": "https://timeline.leica-camera.com/en-US/years/1914",
+      "usedFor": "Oskar Barnack rotates vertical 35mm cine film into landscape format; birth of 24×36 format and Ur-Leica",
+      "note": "официальная история Leica"
+    },
+    "SRC-058": {
+      "id": "SRC-058",
+      "name": "Leica Oskar Barnack Award — Oskar Barnack",
+      "url": "https://www.leica-oskar-barnack-award.com/en/information/oskar-barnack.html",
+      "usedFor": "Barnack, Ur-Leica and 1920 Wetzlar floods as early 35mm still reportage series",
+      "note": "официальный Leica-ресурс"
+    },
+    "SRC-059": {
+      "id": "SRC-059",
+      "name": "Smithsonian NMAH — Leica 35 mm 1(A) Camera",
+      "url": "https://americanhistory.si.edu/collections/object/nmah_834692",
+      "usedFor": "Leica 1(A), designed by Barnack, announced 1924 and sold in 1925; popularized 35mm film photography",
+      "note": "музейная карточка предмета"
+    },
+    "SRC-060": {
+      "id": "SRC-060",
+      "name": "Leica Timeline — 1925",
+      "url": "https://timeline.leica-camera.com/en/years/1925",
+      "usedFor": "Leica I, Leitz’s first 35mm camera in serial production, debuts at Leipzig Spring Fair in 1925",
+      "note": "официальная история Leica"
+    },
+    "SRC-061": {
+      "id": "SRC-061",
+      "name": "Science Museum Group — Kodak Retina Type 117",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co8205056/kodak-retina-type-117-35mm-camera",
+      "usedFor": "Kodak Retina Type 117, 1934–1935; first camera to use daylight-loading 135 cartridges",
+      "note": "музейная карточка предмета"
     }
   },
   "lessons": [
@@ -532,10 +602,18 @@
       "telegramUrl": "https://t.me/photolab_vf"
     },
     {
+      "id": "PL-009",
+      "topic": "35 мм",
+      "nodesNarrative": "PL-HIST-0079…0088",
+      "whatToUnderstand": "35 мм родился в кино, но стал языком компактной фотографии: киноплёнка превратилась в маленький кадр 24×36 и открыла путь Leica.",
+      "status": "основа заполнена",
+      "telegramUrl": "https://t.me/photolab_vf"
+    },
+    {
       "id": "будущие PL",
-      "topic": "Расширение после PL-008",
-      "nodesNarrative": "35 мм, Leica, цвет, вспышка, автофокус, цифровая фотография, смартфоны, AI",
-      "whatToUnderstand": "Фотография станет компактной, цветной, автоматической, цифровой и вычислительной.",
+      "topic": "Расширение после PL-009",
+      "nodesNarrative": "Leica I, цвет, вспышка, автофокус, цифровая фотография, смартфоны, AI",
+      "whatToUnderstand": "Фотография станет ещё компактнее, цветной, автоматической, цифровой и вычислительной.",
       "status": "планируется",
       "telegramUrl": null
     }
@@ -550,6 +628,7 @@
       "PL-006",
       "PL-007",
       "PL-008",
+      "PL-009",
       "будущие PL",
       "межурочный узел"
     ],
@@ -596,7 +675,8 @@
       "США / Великобритания",
       "США / Великобритания / глобально",
       "Франция",
-      "Швеция"
+      "Швеция",
+      "международный процесс"
     ]
   },
   "nodes": [
@@ -3672,6 +3752,413 @@
       "subBranch": "Brownie / мост к 35 мм",
       "nodeType": "Связь / переход",
       "flagship": false
+    },
+    {
+      "id": "PL-HIST-0079",
+      "dateLabel": "1889",
+      "dateAccuracy": "год",
+      "dateSortStart": 1889,
+      "dateSortEnd": 1889,
+      "country": "США",
+      "city": "Рочестер, Нью-Йорк",
+      "person": "Джордж Истмен / Eastman Kodak",
+      "event": "Промышленная прозрачная рулонная плёнка Eastman создаёт гибкий носитель, из которого вскоре вырастет киноформат 35 мм.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "Transparent roll film",
+      "whatChanged": "Плёнка становится не только альтернативой стеклянной пластине, но и материалом для длинной последовательности кадров.",
+      "prevLink": "Рулонная плёнка Kodak 1888–1889",
+      "nextLink": "Edison/Dickson use flexible film for motion-picture camera",
+      "branchStatus": "Связь / переход",
+      "importance": 5,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-052",
+      "sourceName": "Kodak — Motion Picture History",
+      "sourceUrl": "https://www.kodak.com/en/company/page/motion-picture-history/",
+      "confidence": 5,
+      "lectureComment": "Для PL-009 важно показать: 35 мм родился не сразу как фотоплёнка для фотоаппарата, а через кинематографический носитель.",
+      "mapVisualIdea": "Рулон прозрачной плёнки превращается в длинную дорожку кадров.",
+      "tags": [
+        "PL009",
+        "35mm",
+        "transparent-film",
+        "Eastman",
+        "cinema-roots"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 43.1566,
+        "lon": -77.6088
+      },
+      "subBranch": "35 мм / прозрачная рулонная плёнка",
+      "nodeType": "Связь / переход",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0080",
+      "dateLabel": "1891",
+      "dateAccuracy": "год",
+      "dateSortStart": 1891,
+      "dateSortEnd": 1891,
+      "country": "США",
+      "city": "Вест-Ориндж, Нью-Джерси",
+      "person": "Томас Эдисон / Уильям К. Л. Диксон",
+      "event": "В лаборатории Эдисона разрабатываются Kinetograph и Kinetoscope; в патентной логике ширина плёнки фиксируется как 35 мм.",
+      "branch": "Проекция / распространение",
+      "branchColor": "#00988a",
+      "technology": "Kinetograph / Kinetoscope 35 mm film",
+      "whatChanged": "35 мм начинает работать как практический формат для записи и показа движущегося изображения.",
+      "prevLink": "Прозрачная рулонная плёнка Eastman",
+      "nextLink": "35 мм закрепляется в кино как рабочий стандарт",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-053",
+      "sourceName": "Library of Congress — Origins of Motion Pictures",
+      "sourceUrl": "https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/history-of-edison-motion-pictures/origins-of-motion-pictures/",
+      "confidence": 5,
+      "lectureComment": "Объяснить аккуратно: это ещё не фотоаппарат Leica, а кинематографический стандарт, который позже будет переосмыслен фотографией.",
+      "mapVisualIdea": "Лаборатория Эдисона: лента плёнки проходит через механизм с перфорацией.",
+      "tags": [
+        "PL009",
+        "Edison",
+        "Dickson",
+        "Kinetograph",
+        "35mm"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 40.7987,
+        "lon": -74.239
+      },
+      "subBranch": "35 мм / киноистоки",
+      "nodeType": "Технология / процесс",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0081",
+      "dateLabel": "1890-е",
+      "dateAccuracy": "диапазон",
+      "dateSortStart": 1890,
+      "dateSortEnd": 1899,
+      "country": "США",
+      "city": "Вест-Ориндж, Нью-Джерси",
+      "person": "Уильям К. Л. Диксон / Kodak",
+      "event": "Диксон использует прозрачную плёнку Kodak шириной 70 мм, разрезает её пополам до 35 мм и перфорирует для Edison Kinetoscope.",
+      "branch": "Проекция / распространение",
+      "branchColor": "#00988a",
+      "technology": "35 mm perforated motion-picture film",
+      "whatChanged": "Появляется физическая логика формата: узкая гибкая лента, перфорация, кадры, механическая протяжка.",
+      "prevLink": "Transparent Kodak film",
+      "nextLink": "International 35 mm motion-picture practice",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-054",
+      "sourceName": "George Eastman Museum — Early Kodak transparent film",
+      "sourceUrl": "https://www.eastman.org/two-rare-rolls-early-kodak-film-acquired-george-eastman-museum",
+      "confidence": 5,
+      "lectureComment": "Это красивый узел для карты: 70 мм делится пополам — и рождается 35-мм дорожка.",
+      "mapVisualIdea": "70-мм рулон плёнки разрезан на две 35-мм ленты с перфорацией.",
+      "tags": [
+        "PL009",
+        "Dickson",
+        "Kodak",
+        "perforation",
+        "35mm-film"
+      ],
+      "checkLater": "Проверить формулировку периода: точный год разрезания 70 мм на 35 мм в разных источниках может отличаться.",
+      "coordinates": {
+        "lat": 40.7987,
+        "lon": -74.239
+      },
+      "subBranch": "35 мм / ширина и перфорация",
+      "nodeType": "Ключевой исторический узел",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0082",
+      "dateLabel": "1893–1894",
+      "dateAccuracy": "диапазон",
+      "dateSortStart": 1893,
+      "dateSortEnd": 1894,
+      "country": "США",
+      "city": "Вест-Ориндж / Нью-Йорк",
+      "person": "Edison Manufacturing Company / зрители Kinetoscope",
+      "event": "Kinetoscope показывает движущиеся изображения на 35-мм перфорированной плёнке и превращает формат в публичный медианоситель.",
+      "branch": "Проекция / распространение",
+      "branchColor": "#00988a",
+      "technology": "35 mm Kinetoscope viewing",
+      "whatChanged": "35 мм становится не лабораторной пробой, а частью публичной визуальной культуры.",
+      "prevLink": "Kinetograph and perforated 35 mm film",
+      "nextLink": "Dominance of 35 mm motion-picture projection and production",
+      "branchStatus": "Главная линия / временная доминирующая линия",
+      "importance": 4,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-055",
+      "sourceName": "George Eastman Museum — Kinetoscope",
+      "sourceUrl": "https://collections.eastman.org/objects/78087/kinetoscope",
+      "confidence": 5,
+      "lectureComment": "Новичку важно: до Leica 35 мм уже был массовым форматом движения и развлечения.",
+      "mapVisualIdea": "Аппарат Kinetoscope с лентой 35 мм внутри и зрителем у окуляра.",
+      "tags": [
+        "PL009",
+        "Kinetoscope",
+        "cinema",
+        "35mm",
+        "public-viewing"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 40.7128,
+        "lon": -74.006
+      },
+      "subBranch": "35 мм / Kinetoscope",
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0083",
+      "dateLabel": "1908–1909",
+      "dateAccuracy": "диапазон",
+      "dateSortStart": 1908,
+      "dateSortEnd": 1909,
+      "country": "международный процесс",
+      "city": "США / Европа",
+      "person": "Киноиндустрия / MPPC / производители оборудования",
+      "event": "35-мм киноплёнка с четырьмя перфорациями на кадр фактически закрепляется как международный производственный и прокатный стандарт.",
+      "branch": "Проекция / распространение",
+      "branchColor": "#00988a",
+      "technology": "35 mm motion-picture standard",
+      "whatChanged": "Стандартизация делает формат удобным для индустрии: камеры, проекторы, лаборатории и прокат начинают говорить на одном техническом языке.",
+      "prevLink": "Edison/Dickson 35 mm practice",
+      "nextLink": "35 mm cine film becomes available for still-camera reinterpretation",
+      "branchStatus": "Главная линия / временная доминирующая линия",
+      "importance": 4,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-056",
+      "sourceName": "SMPTE Journal — The Origins of 35mm Film as a Standard",
+      "sourceUrl": "https://journal.smpte.org/periodicals/SMPTE%20Journal/99/8/22/",
+      "confidence": 4,
+      "lectureComment": "Это узел про стандарт: когда формат становится общим языком, его легче взять и переосмыслить в фотографии.",
+      "mapVisualIdea": "Схема: камера → плёнка 35 мм → проектор → общий стандарт.",
+      "tags": [
+        "PL009",
+        "35mm-standard",
+        "cinema",
+        "SMPTE",
+        "MPPC"
+      ],
+      "checkLater": "Проверить детали 1908–1909 и роль MPPC при финальной редакции лекции.",
+      "coordinates": null,
+      "subBranch": "35 мм / международный стандарт",
+      "nodeType": "Ключевой исторический узел",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0084",
+      "dateLabel": "1913–1914",
+      "dateAccuracy": "диапазон",
+      "dateSortStart": 1913,
+      "dateSortEnd": 1914,
+      "country": "Германия",
+      "city": "Вецлар",
+      "person": "Оскар Барнак / Ernst Leitz",
+      "event": "Оскар Барнак создаёт прототип Ur-Leica: поворачивает 35-мм киноплёнку в горизонтальную ориентацию и получает кадр 24×36 мм.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "24×36 mm still frame on 35 mm film",
+      "whatChanged": "Киноноситель становится фотографическим форматом: маленький негатив можно увеличить до полноценного отпечатка.",
+      "prevLink": "35 mm motion-picture standard",
+      "nextLink": "Leica I and small-format photography",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-057",
+      "sourceName": "Leica Timeline — 1914",
+      "sourceUrl": "https://timeline.leica-camera.com/en-US/years/1914",
+      "confidence": 5,
+      "lectureComment": "Главная идея PL-009: не просто плёнка 35 мм, а поворот мышления — киноформат превращают в компактную фотографическую систему.",
+      "mapVisualIdea": "35-мм кинолента поворачивается горизонтально; появляется прямоугольник 24×36.",
+      "tags": [
+        "PL009",
+        "Ur-Leica",
+        "Oskar-Barnack",
+        "24x36",
+        "35mm"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 50.5619,
+        "lon": 8.5044
+      },
+      "subBranch": "35 мм / 24×36",
+      "nodeType": "Ключевой исторический узел",
+      "flagship": true
+    },
+    {
+      "id": "PL-HIST-0085",
+      "dateLabel": "1920",
+      "dateAccuracy": "год",
+      "dateSortStart": 1920,
+      "dateSortEnd": 1920,
+      "country": "Германия",
+      "city": "Вецлар",
+      "person": "Оскар Барнак",
+      "event": "Барнак снимает на прототип Leica наводнение в Вецларе; серия часто рассматривается как ранний пример 35-мм репортажной фотографии.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "35 mm reportage series",
+      "whatChanged": "Компактная камера показывает свою силу: фотограф может быть ближе к событию и двигаться быстрее.",
+      "prevLink": "Ur-Leica prototype and 24×36 format",
+      "nextLink": "Small camera becomes tool for reportage and street photography",
+      "branchStatus": "Переходная технология",
+      "importance": 4,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-058",
+      "sourceName": "Leica Oskar Barnack Award — Oskar Barnack",
+      "sourceUrl": "https://www.leica-oskar-barnack-award.com/en/information/oskar-barnack.html",
+      "confidence": 5,
+      "lectureComment": "Важно для storytelling: 35 мм меняет не только технику, но и поведение фотографа — он становится мобильным наблюдателем.",
+      "mapVisualIdea": "Фотограф с маленькой камерой среди реального события, не в студии.",
+      "tags": [
+        "PL009",
+        "reportage",
+        "Barnack",
+        "Wetzlar",
+        "35mm"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 50.5619,
+        "lon": 8.5044
+      },
+      "subBranch": "35 мм / репортажность",
+      "nodeType": "Применение / жанр",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0086",
+      "dateLabel": "1924 / 1925",
+      "dateAccuracy": "диапазон",
+      "dateSortStart": 1924,
+      "dateSortEnd": 1925,
+      "country": "Германия",
+      "city": "Вецлар / Лейпциг",
+      "person": "Oskar Barnack / Ernst Leitz",
+      "event": "Leica 1(A), разработанная Барнаком, объявлена в 1924 году и продаётся с 1925 года; она популяризирует 35-мм фотографию.",
+      "branch": "Оптические инструменты",
+      "branchColor": "#009ca5",
+      "technology": "Leica 1(A) 35 mm camera",
+      "whatChanged": "35 мм выходит из экспериментального прототипа в коммерческую фотографическую практику.",
+      "prevLink": "Ur-Leica and 24×36 format",
+      "nextLink": "Leica I as the next dedicated lesson PL-010",
+      "branchStatus": "Главная линия",
+      "importance": 5,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-059",
+      "sourceName": "Smithsonian NMAH — Leica 35 mm 1(A) Camera",
+      "sourceUrl": "https://americanhistory.si.edu/collections/object/nmah_834692",
+      "confidence": 5,
+      "lectureComment": "Этот узел — мост к PL-010: в PL-009 объясняем формат, в PL-010 подробно разбираем Leica I.",
+      "mapVisualIdea": "Маленькая Leica рядом с тяжёлой старой камерой: формат меняет масштаб фотографии.",
+      "tags": [
+        "PL009",
+        "Leica",
+        "Leica1A",
+        "35mm",
+        "Barnack"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 51.3397,
+        "lon": 12.3731
+      },
+      "subBranch": "35 мм / коммерциализация Leica",
+      "nodeType": "Инструмент / устройство",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0087",
+      "dateLabel": "1925",
+      "dateAccuracy": "год",
+      "dateSortStart": 1925,
+      "dateSortEnd": 1925,
+      "country": "Германия",
+      "city": "Лейпциг",
+      "person": "Ernst Leitz / Leica",
+      "event": "Leica I дебютирует на Лейпцигской весенней ярмарке как первая серийная 35-мм камера Leitz.",
+      "branch": "Оптические инструменты",
+      "branchColor": "#009ca5",
+      "technology": "Leica I serial production",
+      "whatChanged": "Компактная камера становится серьёзным фотографическим инструментом, а не игрушкой или лабораторной пробой.",
+      "prevLink": "Commercial Leica 1(A) launch",
+      "nextLink": "PL-010: Leica I and the new language of photography",
+      "branchStatus": "Переходная технология",
+      "importance": 5,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-060",
+      "sourceName": "Leica Timeline — 1925",
+      "sourceUrl": "https://timeline.leica-camera.com/en/years/1925",
+      "confidence": 5,
+      "lectureComment": "Оставить как переход: это событие нужно не раскрывать полностью, а открыть дверь в PL-010.",
+      "mapVisualIdea": "Ярмарочная витрина Leica I как вход в следующий урок.",
+      "tags": [
+        "PL009",
+        "LeicaI",
+        "Leipzig",
+        "small-format",
+        "future-PL010"
+      ],
+      "checkLater": "Не дублировать слишком подробно с PL-010: здесь только мост к следующему уроку.",
+      "coordinates": {
+        "lat": 51.3397,
+        "lon": 12.3731
+      },
+      "subBranch": "35 мм / мост к Leica I",
+      "nodeType": "Связь / переход",
+      "flagship": false
+    },
+    {
+      "id": "PL-HIST-0088",
+      "dateLabel": "1934",
+      "dateAccuracy": "год",
+      "dateSortStart": 1934,
+      "dateSortEnd": 1934,
+      "country": "Германия",
+      "city": "Штутгарт",
+      "person": "Kodak AG / Kodak Retina",
+      "event": "Kodak Retina Type 117 становится первой камерой для дневной загрузки 135-картриджей, которые сделают 35 мм удобнее для широкой фотографии.",
+      "branch": "Негатив-позитив",
+      "branchColor": "#00724c",
+      "technology": "135 daylight-loading cartridge",
+      "whatChanged": "35 мм получает бытовую форму: плёнку становится легче покупать, вставлять в камеру и использовать без тёмной комнаты.",
+      "prevLink": "Leica and manually loaded 35 mm film",
+      "nextLink": "135 cartridge becomes dominant consumer still-film format",
+      "branchStatus": "Переходная технология",
+      "importance": 4,
+      "lessonLink": "PL-009",
+      "sourceId": "SRC-061",
+      "sourceName": "Science Museum Group — Kodak Retina Type 117",
+      "sourceUrl": "https://collection.sciencemuseumgroup.org.uk/objects/co8205056/kodak-retina-type-117-35mm-camera",
+      "confidence": 5,
+      "lectureComment": "Финальный смысл PL-009: формат победил не только из-за качества, но и из-за удобства системы.",
+      "mapVisualIdea": "Открытый 135-картридж рядом с Kodak Retina и полоской 35-мм плёнки.",
+      "tags": [
+        "PL009",
+        "135-film",
+        "Kodak-Retina",
+        "35mm",
+        "cartridge"
+      ],
+      "checkLater": null,
+      "coordinates": {
+        "lat": 48.7758,
+        "lon": 9.1829
+      },
+      "subBranch": "35 мм / 135 cartridge",
+      "nodeType": "Распространение / коммерциализация",
+      "flagship": false
     }
   ],
   "journeyNodeIds": [
@@ -3682,7 +4169,8 @@
     "PL-HIST-0041",
     "PL-HIST-0049",
     "PL-HIST-0063",
-    "PL-HIST-0069"
+    "PL-HIST-0069",
+    "PL-HIST-0084"
   ],
   "nodesWithoutCoordinates": [
     "PL-HIST-0047",
@@ -3693,6 +4181,7 @@
     "PL-HIST-0073",
     "PL-HIST-0074",
     "PL-HIST-0076",
-    "PL-HIST-0077"
+    "PL-HIST-0077",
+    "PL-HIST-0083"
   ]
 }
