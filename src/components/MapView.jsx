@@ -299,13 +299,30 @@ export default function MapView({ nodes, onSelectNode, onSelectCluster, selected
   // в кластерные бейджи, даже если совпадают координатами; вместо кластера
   // совпадающие координаты веером разносятся в waypointElement (см. правку 6,
   // пункт 1) — каждая станция остаётся видна и кликабельна отдельно.
+  //
+  // Номер шага берём из позиции узла в ПОЛНОМ списке nodes (все станции
+  // маршрута, включая те, у которых нет координат), а не из индекса внутри
+  // projectedPoints/locatedNodes (правка 54, исправление бага сдвига
+  // нумерации маркеров). Если у какого-то флагмана урока координат нет
+  // (например, PL-015 — обобщённый, "распределённый" узел без единой точки),
+  // он просто не попадает на карту как маркер, но не должен сдвигать номера
+  // всех последующих станций: раньше stepNumber считался как idx+1 по уже
+  // отфильтрованному projectedPoints, поэтому пропуск одной станции без
+  // координат сдвигал видимые номера ("16" на карте на самом деле был шагом
+  // 17 и т.д.) и рассинхронизировал подсветку маркера с выбранным шагом.
+  const journeyStepNumbers = useMemo(() => {
+    if (!isJourney) return null;
+    const map = new Map();
+    nodes.forEach((n, idx) => map.set(n.id, idx + 1));
+    return map;
+  }, [nodes, isJourney]);
+
   const points = useMemo(() => {
     if (isJourney) {
-      // Номер шага берём из исходного порядка projectedPoints (1..6), а не
-      // из порядка после группировки — группа совпадающих координат схлопывает
-      // несколько точек в одну запись groups[], и если бы совпавшие станции
-      // не шли подряд, порядок после flatten мог бы разъехаться с 1..6.
-      const indexed = projectedPoints.map((p, idx) => ({ ...p, stepNumber: idx + 1 }));
+      const indexed = projectedPoints.map((p) => ({
+        ...p,
+        stepNumber: journeyStepNumbers.get(p.node.id),
+      }));
       const groups = groupByProximity(indexed);
       const result = [];
       for (const group of groups) {
