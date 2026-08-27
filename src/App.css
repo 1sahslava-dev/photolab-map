@@ -562,12 +562,37 @@
   background: rgba(39, 167, 231, 0.08);
 }
 
+/* Кнопка входа в приложение PLVF (правка 56) — та же базовая вёрстка, что
+   у TelegramLink, но hover-акцент в золотом (--gold), а не Telegram Blue. */
+.node-card-plvf:hover {
+  border-color: var(--gold);
+  background: rgba(201, 151, 43, 0.08);
+}
+
+/* Обе кнопки-ссылки ("Читать в Telegram" / "Открыть в приложении PLVF")
+   стоят в одном ряду и переносятся на мобильном, если не помещаются
+   (см. правку 56) — раньше margin-bottom был на каждой ссылке отдельно,
+   теперь он на обёртке, а сами ссылки внутри без нижнего отступа. */
+.node-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.node-card-links .node-card-telegram {
+  margin-bottom: 0;
+}
+
+.node-card--journey .node-card-links {
+  margin-bottom: 14px;
+}
+
 /* Journey Mode: кнопка крупнее, чем инлайновая ссылка в Explore Mode
    (см. правку 22, пункт 3) — Explore-версию не трогаем. */
 .node-card--journey .node-card-telegram {
   font-size: 14px;
   padding: 11px 18px;
-  margin-bottom: 14px;
 }
 
 .node-card-telegram svg {

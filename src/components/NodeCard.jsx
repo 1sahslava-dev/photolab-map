@@ -97,6 +97,27 @@ function TelegramLink({ url }) {
   );
 }
 
+// Ссылка на отдельное веб-приложение PLVF (photolab-app.vercel.app) — единая для
+// всего курса (не приходит из xlsx per-lesson, как telegramUrl), поэтому
+// URL зашит константой здесь же, а не в data.json (см. правку 56). Кнопка
+// всегда рядом с TelegramLink — оба варианта "куда пойти дальше" с уроком.
+const PLVF_APP_URL = "https://photolab-app.vercel.app";
+
+function PlvfAppLink() {
+  return (
+    <a className="node-card-telegram node-card-plvf" href={PLVF_APP_URL} target="_blank" rel="noreferrer">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="var(--gold)" />
+        <path
+          fill="#fff"
+          d="M9.5 7.2v9.6l7.7-4.8-7.7-4.8z"
+        />
+      </svg>
+      Открыть в приложении PLVF
+    </a>
+  );
+}
+
 // Короткий редакционный заголовок шага — не длинное техническое "событие"
 // из базы (node.event), а самостоятельная, отдельно составленная строка
 // (см. правку 19). Дан явно только для PL-001..007, дальше по тому же
@@ -152,7 +173,10 @@ function JourneyCard({ node, journeyStep, telegramUrl, lessonTopic }) {
         </div>
       )}
 
-      <TelegramLink url={telegramUrl} />
+      <div className="node-card-links">
+        <TelegramLink url={telegramUrl} />
+        <PlvfAppLink />
+      </div>
 
       <JourneyDisclosure node={node} />
 
@@ -261,7 +285,10 @@ export default function NodeCard({ node, onClose, journeyStep, telegramUrl, less
         )}
       </dl>
 
-      <TelegramLink url={telegramUrl} />
+      <div className="node-card-links">
+        <TelegramLink url={telegramUrl} />
+        <PlvfAppLink />
+      </div>
 
       {node.sourceUrl && (
         <a className="node-card-source" href={node.sourceUrl} target="_blank" rel="noreferrer">
