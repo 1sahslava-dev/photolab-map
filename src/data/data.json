@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T03:19:16.901997+00:00",
+  "generatedAt": "2026-09-02T04:08:13.677406+00:00",
   "sourceFile": "master.xlsx",
   "branches": [
     {
@@ -1358,7 +1358,7 @@
       "nodesNarrative": "PL-HIST-0099…0109",
       "whatToUnderstand": "Плёнка — это не просто катушка, а многослойный светочувствительный материал: гибкая основа, эмульсия, серебряные соли, скрытое изображение и служебные слои.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/145"
     },
     {
       "id": "PL-012",
@@ -1366,7 +1366,7 @@
       "nodesNarrative": "PL-HIST-0110…0120",
       "whatToUnderstand": "Эмульсия — это рабочий светочувствительный слой: желатин удерживает кристаллы галогенидов серебра, свет создаёт скрытое изображение, проявитель делает его видимым, а фиксаж закрепляет результат.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/151"
     },
     {
       "id": "PL-013",
@@ -1374,7 +1374,7 @@
       "nodesNarrative": "PL-HIST-0121…0131",
       "whatToUnderstand": "Негатив — это не «испорченная фотография», а промежуточная матрица: из неё можно получить читаемый позитив, тиражировать изображение и управлять печатью.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/162"
     },
     {
       "id": "PL-014",
@@ -1382,7 +1382,7 @@
       "nodesNarrative": "PL-HIST-0132…0142",
       "whatToUnderstand": "Позитив — это читаемая финальная форма изображения: бумажный отпечаток, прозрачность, слайд или мгновенная фотография, которую уже видит зритель.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/168"
     },
     {
       "id": "PL-015",
@@ -1390,7 +1390,7 @@
       "nodesNarrative": "PL-HIST-0143…0153",
       "whatToUnderstand": "Чёрно-белая плёнка — это не просто отсутствие цвета, а отдельный материал и язык: серебро, тон, контраст, зерно, проявка и управляемый характер изображения.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/173"
     },
     {
       "id": "PL-016",
@@ -1398,7 +1398,7 @@
       "nodesNarrative": "PL-HIST-0154…0164",
       "whatToUnderstand": "Цветной негатив — это не готовая картинка, а цветная матрица: несколько слоёв, красители, оранжевая маска и процесс C-41 превращают сцену в материал для печати или сканирования.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro/4/181"
     },
     {
       "id": "PL-017",
@@ -1406,7 +1406,7 @@
       "nodesNarrative": "PL-HIST-0165…0175",
       "whatToUnderstand": "Слайдовая плёнка — это позитивная прозрачность: реверсивный процесс даёт готовое изображение прямо на плёнке, поэтому цвет, проекция и экспозиция требуют большей точности.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro"
     },
     {
       "id": "PL-018",
@@ -1414,7 +1414,7 @@
       "nodesNarrative": "PL-HIST-0176…0186",
       "whatToUnderstand": "ISO — это язык светочувствительности плёнки: число на коробке помогает выбрать материал под свет, связать его с выдержкой/диафрагмой и понять разницу между box speed, EI и push/pull.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro"
     },
     {
       "id": "PL-019",
@@ -1422,7 +1422,7 @@
       "nodesNarrative": "PL-HIST-0187…0197",
       "whatToUnderstand": "Зерно — это не цифровой шум и не просто дефект, а материальная фактура плёнки: кристаллы, эмульсия, ISO, проявитель, сканирование и печать формируют характер изображения.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro"
     },
     {
       "id": "PL-020",
@@ -1430,7 +1430,7 @@
       "nodesNarrative": "PL-HIST-0198…0208",
       "whatToUnderstand": "Экспозиционная широта — это запас материала: плёнка может выдержать часть ошибок экспозиции, но тени, света, контраст, зерно и печать всё равно меняются.",
       "status": "основа заполнена",
-      "telegramUrl": "https://t.me/photolab_vf"
+      "telegramUrl": "https://t.me/photolab_vf_pro"
     },
     {
       "id": "будущие PL",
